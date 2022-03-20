@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	
+	<title>Relevos maquinistas</title>
+	<style>
+		.titulo {
+	border-bottom: 3px solid #c03;
+	background: #ddd;
+	padding: 1px;
+	text-align: center;
+	height: auto;
+	margin: -1em -1em 0;
+}
+
+
+
+.entradaDatos {
+	
+	margin: 10px 5px;
+	display: flex;
+	justify-content: space-around;
+
+}
+
+.boton {
+	display: flex;
+	align-items: center;
+	width: 200px;
+}
+
+	button {
+		width: 120px;
+		height: 40px;
+		font-size: 20px;
+		border: none;
+		background: lightgray;
+		border-radius: 5%;
+	}
+
+	button:hover {
+		background: green;
+		color: #fff;
+	}
+
+label {
+	font-size: 20px;
+}
+
+input {
+	height: 20px;
+	border: none;
+	background: lightgray;
+	margin: 5px 0;
+	text-align: center;
+}
+
+input:focus, input:hover {
+	outline: 1px solid #c03;
+
+}
+
+.cambiosMaquinistas {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+	gap: 15px;
+
+}
+
+	.cambios {
+		background: lightgray;
+		width: 170px;
+		height: 170px;
+		border-radius: 10%;
+		margin: 10px;
+		padding: 5px;
+
+	}
+
+	.cambios:hover {
+		background: green;
+		color: #fff;
+	}
+
+	h3 {
+		font-size: 20px;
+		text-align: center;
+	}
+
+	p {
+		text-align: center;
+
+	}
+
+fieldset {
+	margin: 30px 0;
+}
+
+span {
+	font-weight: bold;
+}
+	</style>
+
+	<script type="text/javascript">
+		function recogerVariables () {
+	var maqui1 = document.getElementById("maquinista1").value;
+	var maqui2 = document.getElementById("maquinista2").value;
+	var maqui3 = document.getElementById("maquinista3").value;
+	var maqui4 = document.getElementById("maquinista4").value;
+	var maqui5 = document.getElementById("maquinista5").value;
+	
+	
+	
+	document.getElementById("ama1").innerHTML = maqui1;
+	document.getElementById("ama3").innerHTML = maqui3;
+	document.getElementById("ama5").innerHTML = maqui5;
+	
+	document.getElementById("bma2").innerHTML = maqui2;
+	document.getElementById("bma4").innerHTML = maqui4;
+	
+	document.getElementById("cma3").innerHTML = maqui3;
+	document.getElementById("cma1").innerHTML = maqui1;
+
+	document.getElementById("dma2").innerHTML = maqui2;
+
+	document.getElementById("ema4").innerHTML = maqui4;
+	document.getElementById("ema5").innerHTML = maqui5;
+
+	document.getElementById("fma3").innerHTML = maqui3;
+
+	document.getElementById("gma2").innerHTML = maqui2;
+	document.getElementById("gma1").innerHTML = maqui1;
+
+	document.getElementById("hma4").innerHTML = maqui4;
+	
+}
+	</script>
+</head>
+<body>
+
+	<div class="contenedor">
+
+		<div class="titulo">
+			<h1>RELEVO MAQUINISTAS</h1>
+		</div>
+		
+		<fieldset>
+		<legend>Datos maquinistas</legend>
+		<div class="entradaDatos">
+			
+				<div class="texto">
+					<div>
+						<label for="maquinista1">Maquinista 1</label>
+						<input type="text" id="maquinista1">
+					</div>
+					
+					<div>
+						<label for="maquinista2">Maquinista 2</label>
+						<input type="text" id="maquinista2">
+					</div>	
+
+					<div>
+						<label for="maquinista3">Maquinista 3</label>
+						<input type="text" id="maquinista3">
+					</div>
+
+					<div>
+						<label for="maquinista4">Maquinista 4</label>
+						<input type="text" id="maquinista4">
+					</div>
+
+					<div>
+						<label for="maquinista5">Maquinista 5</label>
+						<input type="text" id="maquinista5">
+					</div>
+				
+				</div>
+			
+
+			<div class="boton">	
+				<button id="boton" onclick="recogerVariables()">VALIDAR</button>
+			</div>
+		</div>
+		</fieldset>
+
+
+		<fieldset>
+		<legend>Cambios en descargadores</legend>
+		<div class="cambiosMaquinistas">
+
+			<div class="cambios">
+				<h3>6:00 / 14:00 / 22:00</h3>
+				<p><span id="ama1"></span> --> DC1</p>
+				<p><span id="ama5"></span> --> GR1</p>
+				<p><span id="ama3"></span> --> DC3</p>
+			</div>
+
+			<div class="cambios">
+				<h3>7:00 / 15:00 / 23:00</h3>
+				<p><span id="bma2"></span> --> DC1</p>
+				<p><span id="bma4"></span> --> DC3</p>
+			</div>
+
+			<div class="cambios">
+				<h3>8:00 / 16:00 / 0:00</h3>
+				<p><span id="cma3"></span> --> DC1</p>
+				<p><span id="cma1"></span> --> GR1</p>
+			</div>
+
+			<div class="cambios">
+				<h3>9:00 / 17:00 / 1:00</h3>
+				<p><span id="dma2"></span> --> DC3</p>
+			</div>
+
+			<div class="cambios">
+				<h3>10:00 / 18:00 / 2:00</h3>
+				<p><span id="ema4"></span> --> DC1</p>
+				<p><span id="ema5"></span> --> GR1</p>
+			</div>
+
+			<div class="cambios">
+				<h3>11:00 / 19:00 / 3:00</h3>
+				<p><span id="fma3"></span> --> DC3</p>
+			</div>
+
+			<div class="cambios">
+				<h3>12:00 / 20:00 / 4:00</h3>
+				<p><span id="gma2"></span> --> DC1</p>
+				<p><span id="gma1"></span> --> GR1</p>
+			</div>
+
+			<div class="cambios">
+				<h3>13:00 / 21:00 / 5:00</h3>
+				<p><span id="hma4"></span> --> DC3</p>
+			</div>
+
+
+
+			
+		</div>
+		</fieldset>
+		
+		
+	</div>
+	
+
+
+
+
+
+
+
+
+
+	
+
+</body>
+</html>
