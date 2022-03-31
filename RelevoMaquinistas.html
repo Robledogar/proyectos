@@ -18,34 +18,72 @@
 
 .entradaDatos {
 	
-	margin: 10px 5px;
+	
 	display: flex;
+	flex-direction: row;
 	justify-content: space-around;
+	flex-wrap: wrap;
+	
 
 }
 
-.boton {
+.texto {
 	display: flex;
-	align-items: center;
-	width: 200px;
+	flex-direction: column;
+	justify-content: space-between;
+	margin: 10px;
+}
+
+
+.tiempoReal {
+	margin: 10px;
+	
+}
+
+.estadoActual {
+	background: lightgray;
+	border-radius: 10%;
+	padding: 5px;
+	width: 170px;
+	height: 170px;
+
+}
+ 
+h4 {
+	text-align: center;
+	font-size: 15px;
+	margin-top: 2px;
+}
+
+#reloj {
+	border-bottom: 1px solid #c03;
+	font-size: 20px;
+	margin-top: -20px;
 }
 
 	button {
-		width: 120px;
-		height: 40px;
-		font-size: 20px;
+		width: 80px;
+		height: 30px;
+		font-size: 15px;
 		border: none;
 		background: lightgray;
 		border-radius: 5%;
+		transition: background 1s, color 1s;
 	}
 
-	button:hover {
+	#botonValidar:hover {
 		background: green;
+		color: #fff;
+	}
+
+	#botonBorrar:hover {
+		background: red;
 		color: #fff;
 	}
 
 label {
 	font-size: 20px;
+	text-align: center;
 }
 
 input {
@@ -54,11 +92,11 @@ input {
 	background: lightgray;
 	margin: 5px 0;
 	text-align: center;
+
 }
 
 input:focus, input:hover {
 	outline: 1px solid #c03;
-
 }
 
 .cambiosMaquinistas {
@@ -80,14 +118,12 @@ input:focus, input:hover {
 
 	}
 
-	.cambios:hover {
-		background: green;
-		color: #fff;
-	}
+	
 
 	h3 {
 		font-size: 20px;
 		text-align: center;
+		border-bottom: 1px solid #c03;
 	}
 
 	p {
@@ -102,41 +138,153 @@ fieldset {
 span {
 	font-weight: bold;
 }
+
+footer {
+	display: flex;
+	justify-content: center;
+}
 	</style>
 
 	<script type="text/javascript">
-		function recogerVariables () {
-	var maqui1 = document.getElementById("maquinista1").value;
-	var maqui2 = document.getElementById("maquinista2").value;
-	var maqui3 = document.getElementById("maquinista3").value;
-	var maqui4 = document.getElementById("maquinista4").value;
-	var maqui5 = document.getElementById("maquinista5").value;
-	
-	
-	
-	document.getElementById("ama1").innerHTML = maqui1;
-	document.getElementById("ama3").innerHTML = maqui3;
-	document.getElementById("ama5").innerHTML = maqui5;
-	
-	document.getElementById("bma2").innerHTML = maqui2;
-	document.getElementById("bma4").innerHTML = maqui4;
-	
-	document.getElementById("cma3").innerHTML = maqui3;
-	document.getElementById("cma1").innerHTML = maqui1;
+		var temporizador = setTimeout("reloj()", 1000);
 
-	document.getElementById("dma2").innerHTML = maqui2;
+		function reloj() {
+			var maqui1 = document.getElementById("maquinista1").value;
+			var maqui2 = document.getElementById("maquinista2").value;
+			var maqui3 = document.getElementById("maquinista3").value;
+			var maqui4 = document.getElementById("maquinista4").value;
+			var maqui5 = document.getElementById("maquinista5").value;
 
-	document.getElementById("ema4").innerHTML = maqui4;
-	document.getElementById("ema5").innerHTML = maqui5;
+			var tiempo = new Date();
+			var horas = tiempo.getHours();
+			var minutos = tiempo.getMinutes();
+			var segundos = tiempo.getSeconds();
 
-	document.getElementById("fma3").innerHTML = maqui3;
+			document.getElementById("horas").innerHTML = horas;
+			document.getElementById("minutos").innerHTML = minutos;
+			temporizador = setTimeout("reloj()", 1000);
 
-	document.getElementById("gma2").innerHTML = maqui2;
-	document.getElementById("gma1").innerHTML = maqui1;
+			var arregloHoras = new String(horas);
+			
 
-	document.getElementById("hma4").innerHTML = maqui4;
+			if (arregloHoras.length == 1) {
+				document.getElementById("horas").innerHTML = "0" + arregloHoras;
+			}
+
+			var arregloMinutos = new String(minutos);
+			if (arregloMinutos.length == 1) {
+				document.getElementById("minutos").innerHTML = "0" + arregloMinutos;
+			}
+
+
+			//Estado actual DC1
+			if (horas == 6 || horas == 14 || horas == 22) {
+				document.getElementById("dc1").innerHTML = maqui1;
+			}
+			 else if (horas == 7 || horas == 15 || horas == 23) {
+				document.getElementById("dc1").innerHTML = maqui2;
+			}
+			else if (horas == 8 || horas == 9 || horas == 16 || horas == 17 || horas == 0 || horas == 1) {
+				document.getElementById("dc1").innerHTML = maqui3;
+			}
+			else if (horas == 10 || horas == 11 || horas == 18 || horas == 19 || horas == 2 || horas == 3) {
+				document.getElementById("dc1").innerHTML = maqui4;
+			}
+			else if (horas == 12 || horas == 13 || horas == 20 || horas == 21 || horas == 4 || horas == 5) {
+				document.getElementById("dc1").innerHTML = maqui2;
+			}
+
+			//Estado actual GR1
+			if (horas == 6 || horas == 7 || horas == 14 || horas == 15 || horas == 22 || horas == 23) {
+				document.getElementById("gr1").innerHTML = maqui5;
+			}
+			else if (horas == 8 || horas == 9 || horas == 16 || horas == 17 || horas == 0 || horas == 1) {
+				document.getElementById("gr1").innerHTML = maqui1;
+			}
+			else if (horas == 10 || horas == 11 || horas == 18 || horas == 19 || horas == 2 || horas == 3) {
+				document.getElementById("gr1").innerHTML = maqui5;
+			}
+			else if (horas == 12 || horas == 13 || horas == 20 || horas == 21 || horas == 4 || horas == 5) {
+				document.getElementById("gr1").innerHTML = maqui1;
+			}
+
+			//Estado actual DC3
+			if (horas == 6 || horas == 14 || horas == 22) {
+				document.getElementById("dc3").innerHTML = maqui3;
+			}
+			else if (horas == 7 || horas == 8 || horas == 15 || horas == 16 || horas == 23 || horas == 0) {
+				document.getElementById("dc3").innerHTML = maqui4;
+			}
+			else if (horas == 9 || horas == 10 || horas == 17 || horas == 18 || horas == 1 || horas == 2) {
+				document.getElementById("dc3").innerHTML = maqui2;
+			}
+			else if (horas == 11 || horas == 12 || horas == 19 || horas == 20 || horas == 3 || horas == 4) {
+				document.getElementById("dc3").innerHTML = maqui3;
+			}
+			else if (horas == 13 || horas == 21 || horas == 5) {
+				document.getElementById("dc3").innerHTML = maqui4;
+			}
+
+			//Cambios en los descargadores
+			document.getElementById("ama1").innerHTML = maqui1;
+			document.getElementById("ama3").innerHTML = maqui3;
+			document.getElementById("ama5").innerHTML = maqui5;
 	
-}
+			document.getElementById("bma2").innerHTML = maqui2;
+			document.getElementById("bma4").innerHTML = maqui4;
+	
+			document.getElementById("cma3").innerHTML = maqui3;
+			document.getElementById("cma1").innerHTML = maqui1;
+
+			document.getElementById("dma2").innerHTML = maqui2;
+
+			document.getElementById("ema4").innerHTML = maqui4;
+			document.getElementById("ema5").innerHTML = maqui5;
+
+			document.getElementById("fma3").innerHTML = maqui3;
+
+			document.getElementById("gma2").innerHTML = maqui2;
+			document.getElementById("gma1").innerHTML = maqui1;
+
+			document.getElementById("hma4").innerHTML = maqui4;
+
+			//Alarmas de cambio de maquinistas
+			const alarma = new Audio("sirena.wav")
+
+			if (horas == 6 && minutos == 0 && segundos == 0 || horas == 14 && minutos == 0 && segundos == 0 || horas == 22 && minutos == 0 && segundos == 0) {
+				document.getElementById("audio").play();
+				alert(`${maqui1} --> DC1 / ${maqui5} --> GR1 / ${maqui3} --> DC3`);
+			}
+			else if (horas == 7 && minutos == 0 && segundos == 0 || horas == 15 && minutos == 0 && segundos == 0 || horas == 23 && minutos == 0 && segundos == 0) {
+				document.getElementById("audio").play();
+				alert(`${maqui2} --> DC1 / ${maqui4} --> DC3`);
+			}
+			else if (horas == 8 && minutos == 0 && segundos == 0 || horas == 16 && minutos == 0 && segundos == 0 || horas == 0 && minutos == 0 && segundos == 0) {
+				document.getElementById("audio").play();
+				alert(`${maqui3} --> DC1 / ${maqui1} --> GR1`);
+			}
+			else if (horas == 9 && minutos == 0 && segundos == 0 || horas == 17 && minutos == 0 && segundos == 0 || horas == 1 && minutos == 0 && segundos == 0) {
+				document.getElementById("audio").play();
+				alert(`${maqui2} --> DC3`);
+			}
+			else if (horas == 10 && minutos == 0 && segundos == 0 || horas == 18 && minutos == 0 && segundos == 0 || horas == 2 && minutos == 0 && segundos == 0) {
+				document.getElementById("audio").play();
+				alert(`${maqui4} --> DC1 / ${maqui5} --> GR1`);
+			}
+			else if (horas == 11 && minutos == 0 && segundos == 0 || horas == 19 && minutos == 0 && segundos == 0 || horas == 3 && minutos == 0 && segundos == 0) {
+				document.getElementById("audio").play();
+				alert(`${maqui3} --> DC3`);
+			}
+			else if (horas == 12 && minutos == 0 && segundos == 0 || horas == 20 && minutos == 0 && segundos == 0 || horas == 4 && minutos == 0 && segundos == 0) {
+				document.getElementById("audio").play();
+				alert(`${maqui2} --> DC1 / ${maqui1} --> GR1`);
+			}
+			else if (horas == 13 && minutos == 0 && segundos == 0 || horas == 21 && minutos == 0 && segundos == 0 || horas == 5 && minutos == 0 && segundos == 0) {
+				document.getElementById("audio").play();
+				alert(`${maqui4} --> DC3`);
+			}		
+		}
+
 	</script>
 </head>
 <body>
@@ -150,38 +298,45 @@ span {
 		<fieldset>
 		<legend>Datos maquinistas</legend>
 		<div class="entradaDatos">
-			
+
 				<div class="texto">
 					<div>
 						<label for="maquinista1">Maquinista 1</label>
-						<input type="text" id="maquinista1">
+						<input type="text" id="maquinista1" maxlength="14">
 					</div>
 					
 					<div>
 						<label for="maquinista2">Maquinista 2</label>
-						<input type="text" id="maquinista2">
+						<input type="text" id="maquinista2" maxlength="14">
 					</div>	
 
 					<div>
 						<label for="maquinista3">Maquinista 3</label>
-						<input type="text" id="maquinista3">
+						<input type="text" id="maquinista3" maxlength="14">
 					</div>
 
 					<div>
 						<label for="maquinista4">Maquinista 4</label>
-						<input type="text" id="maquinista4">
+						<input type="text" id="maquinista4" maxlength="14">
 					</div>
 
 					<div>
 						<label for="maquinista5">Maquinista 5</label>
-						<input type="text" id="maquinista5">
+						<input type="text" id="maquinista5" maxlength="14">
 					</div>
 				
 				</div>
-			
+		
 
-			<div class="boton">	
-				<button id="boton" onclick="recogerVariables()">VALIDAR</button>
+			<div class="tiempoReal">
+				<div class="estadoActual">
+					<h4><span id="estadoTitulo">ESTADO ACTUAL</span></h4>
+					<h4 id="reloj"><span id="horas"></span>:<span id="minutos"></span></h4>
+					<p>DC1: <span id="dc1"></span></p>
+					<p>GR1: <span id="gr1"></span></p>
+					<p>DC3: <span id="dc3"></span></p>
+				</div>
+				
 			</div>
 		</div>
 		</fieldset>
@@ -235,27 +390,16 @@ span {
 			<div class="cambios">
 				<h3>13:00 / 21:00 / 5:00</h3>
 				<p><span id="hma4"></span> --> DC3</p>
-			</div>
-
-
-
-			
+			</div>	
 		</div>
 		</fieldset>
+
+		<footer>
+			<a href="RelevoMaquinistas.html"><button id="botonBorrar">BORRAR</button></a>
+		</footer>
+		<audio id="audio" src="sirena.wav" preload="auto"></audio>
 		
 		
 	</div>
-	
-
-
-
-
-
-
-
-
-
-	
-
 </body>
 </html>
