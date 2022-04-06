@@ -1,0 +1,113 @@
+
+
+#contenedorPrincipal {
+	/*background: linear-gradient(lightyellow, white);*/
+	background-image: url("desierto.jpg");
+	background-position: center;
+	background-size: cover;
+	margin: -1.3em -1em;
+	padding: 10px;
+
+}
+
+h1 {
+	font-family: 'Archivo Black', sans-serif;
+	text-align: center;
+	font-size: 40px;
+
+}
+
+td {
+	border: 3px solid gold;
+	text-align: center;
+	width: 100px;
+	border-radius: 10px;
+}
+
+
+
+
+img {
+	width: 40px;
+	padding: 10px;
+
+
+}
+
+.imagen {
+	width: 70px;
+	height: 50px;
+	border: 3px solid gold;
+}
+
+#tablaPuntuacion {
+	display: flex;
+	justify-content: center;
+}
+
+.suma {
+	font-size: 40px;
+}
+
+#imagenSuma {
+	width: 40px;
+}
+
+input {
+	border: none;
+	background: none;
+	text-align: center;
+	font-size: 30px;
+	width: 80%;
+	border-radius: 5px;
+	font-family: 'Archivo Black', sans-serif;
+
+}
+
+input:hover {
+	background: rgba(0, 0, 0, .3);
+}
+
+input:focus {
+	outline: none;
+}
+
+.nombreJugador {
+	font-size: 15px;
+}
+
+#boton {
+	display: flex;
+	justify-content: center;
+	margin: 20px;
+	
+}
+
+	button {
+		font-size: 20px;
+		height: 50px;
+		width: 200px;
+		background: lightgoldenrodyellow;
+		border: none;
+		border-radius: 15px;
+		margin: 10px;
+		font-family: 'Archivo Black', sans-serif;
+
+
+
+	}
+
+	button:hover {
+		background: lightgreen;
+		cursor: pointer;
+	}
+
+#boton {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.suma {
+	font-family: 'Archivo Black', sans-serif;
+}
