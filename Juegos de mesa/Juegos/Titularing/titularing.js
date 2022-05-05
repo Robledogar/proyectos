@@ -67,7 +67,7 @@ var cartas = [  "(LAS 4 PALABRAS DEL TITULAR DEBEN EMPEZAR CON LA MISMA LETRA)",
 var letraRandom;
 var cartaRandom;
 var tituloCarta;
-var segundos = 0;
+var segundos;
 var relojActivo = 0;
 
 
@@ -80,7 +80,7 @@ function inicio() {
 
 function iniciarReloj() {
 	if (segundos == 0) {
-		segundos = 3;
+		segundos = 120;
 		setTimeout(cuentaAtras,1000);
 	}
 		
