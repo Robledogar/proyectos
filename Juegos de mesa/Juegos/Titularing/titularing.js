@@ -1,6 +1,6 @@
 window.onload = inicio;
-let letras = ["A", "A", "A", "B", "B", "C", "C", "D", "D", "D", "E", "E", "E", "E", "F", "F", "G", "G", "H", "H", "I", "I", "I", "J", "J", "K", "K", "L", "L", "L", "M", "M", "N", "N", "N", "O", "O", "O", "P", "P", "Q", "R", "R", "S", "S", "T", "T", "T", "U", "U", "V", "V", "Y", "Z", "Z"];
-let cartas = [  "(LAS 4 PALABRAS DEL TITULAR DEBEN EMPEZAR CON LA MISMA LETRA)",//Trabalenguas
+var letras = ["A", "A", "A", "B", "B", "C", "C", "D", "D", "D", "E", "E", "E", "E", "F", "F", "G", "G", "H", "H", "I", "I", "I", "J", "J", "K", "K", "L", "L", "L", "M", "M", "N", "N", "N", "O", "O", "O", "P", "P", "Q", "R", "R", "S", "S", "T", "T", "T", "U", "U", "V", "V", "Y", "Z", "Z"];
+var cartas = [  "(LAS 4 PALABRAS DEL TITULAR DEBEN EMPEZAR CON LA MISMA LETRA)",//Trabalenguas
 				"(LAS 4 PALABRAS DEL TITULAR DEBEN EMPEZAR CON LA MISMA LETRA)", 			
 				"ACTUALIDAD", //temas
 				"CORAZÓN", 
@@ -63,25 +63,24 @@ let cartas = [  "(LAS 4 PALABRAS DEL TITULAR DEBEN EMPEZAR CON LA MISMA LETRA)",
 				"NIÑO PRODIGIO...",
 				];
 
-let letraRandom;
-let cartaRandom;
-let tituloCarta;
-let segundos = 0;
-let relojActivo = 0;
+
+var letraRandom;
+var cartaRandom;
+var tituloCarta;
+var segundos = 0;
+var relojActivo = 0;
 
 
 
 
 function inicio() {
 	document.getElementById("nuevaRonda").onclick = nuevaRonda;
-	
-	document.getElementById("contador").onclick = iniciarReloj;
-	
+	document.getElementById("contador").onclick = iniciarReloj;	
 }
 
 function iniciarReloj() {
 	if (segundos == 0) {
-		segundos = 120;
+		segundos = 3;
 		setTimeout(cuentaAtras,1000);
 	}
 		
@@ -95,13 +94,12 @@ function iniciarReloj() {
 function nuevaRonda(){
 	
 	
+
 	if(relojActivo == 0) {
 		segundos = 0;
 		document.getElementById("tiempo").innerHTML = "";
 		document.getElementById("tiempoRestante").innerHTML = "";
-			if(letras.length < 8) {
-				location.reload();// hay que buscar una manera de recargar el array de las letras
-			}
+			
 	
 		generarCarta();
 
@@ -110,6 +108,14 @@ function nuevaRonda(){
 			} else {
 				generarCuatroLetras();
 			}					
+	}
+
+	if(letras.length < 4) {
+		letras = ["A", "A", "A", "B", "B", "C", "C", "D", "D", "D", "E", "E", "E", "E", "F", "F", "G", "G", "H", "H", "I", "I", "I", "J", "J", "K", "K", "L", "L", "L", "M", "M", "N", "N", "N", "O", "O", "O", "P", "P", "Q", "R", "R", "S", "S", "T", "T", "T", "U", "U", "V", "V", "Y", "Z", "Z"];
+	}
+
+	if (cartas.length == 0) {
+		location.reload();
 	}
 }
 
