@@ -73,7 +73,7 @@ header img {
 .logo {
 	animation-name: animaLogo;
 	animation-duration: 5000ms;
-	animation-iteration-count: 0;
+	animation-iteration-count: infinite;
 	animation-direction: alternate;
 	animation-fill-mode: forwards;
 	animation-timing-function: linear;
@@ -102,7 +102,6 @@ header img {
 
 .nav ul {
 	display: flex;
-	
 	column-gap: 10px;
 }
 
