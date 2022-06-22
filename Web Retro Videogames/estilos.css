@@ -1,0 +1,294 @@
+/*--------------------------- General ------------------------*/
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: 'Press Start 2P', cursive;
+}
+
+body {
+	margin: 10px;
+	min-height: 100%;
+	background-color: var(--principal);
+	
+}
+
+html {
+	height: 100%;
+}
+
+.container > * {
+	box-shadow: -1px 1px 5px 0 rgba(0, 0, 0	, .75);
+	border-radius: 5px;
+	padding: 10px;
+	text-align: center;
+	background-color: var(--secundario);
+
+
+}
+
+/*---------------------------Variables de los colores------------------------*/
+:root {
+	--principal: #F1F1F1;
+	--secundario:  #47B5FF;
+	--terciario: #FFD36E;
+	--usoPuntual: #23120B;
+	--usoPuntual2: #CF0000;
+}
+
+/*---------------------------Estilos contenedor Principal------------------------*/
+
+h1 {
+	font-size: 1em;
+	letter-spacing: 5px;
+	margin: 10px 0 ;
+}
+
+header img {
+	height: 70px;
+}
+
+.container {
+	display: grid;
+	gap: 10px;
+	grid-template: 
+	"header" 130px
+	"nav" 50px
+	"main" auto
+	"footer" 50px;
+}
+
+/*---------------------------Estilos del HEADER------------------------*/
+
+.header {
+	grid-area: header;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--secundario);
+	color: var(--terciario);
+}
+
+.logo {
+	animation-name: animaLogo;
+	animation-duration: 5000ms;
+	animation-iteration-count: 0;
+	animation-direction: alternate;
+	animation-fill-mode: forwards;
+	animation-timing-function: linear;
+}
+
+@keyframes animaLogo{
+	0% {
+		transform: translateX(-75px);
+	}
+
+
+	100% {
+		transform: translateX(75px);
+	}
+}
+
+/*---------------------------Estilos del NAV------------------------*/
+
+.nav {
+	grid-area: nav;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: var(--terciario);
+}
+
+.nav ul {
+	display: flex;
+	
+	column-gap: 10px;
+}
+
+.nav ul li {
+	list-style: none;
+	height: 40px;
+	border-radius: 5px;
+	transition-property: background-color;
+	transition-duration: 1000ms;
+	display: flex;
+	align-items: center;
+	
+}
+
+.nav ul li a{
+	font-size: 0.5em;
+	text-decoration: none;
+	color: black;
+	padding: 5px;
+	display: flex;
+	flex-direction: column;
+}
+
+.nav ul li:hover {
+	
+	background-color: var(--secundario);
+	
+}
+
+
+
+/*---------------------------Estilos del MAIN------------------------*/
+
+h2 {
+	font-size: .5em;
+	margin: 20px;
+}
+.main {
+	grid-area: main;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+
+}
+
+.galeria {
+	margin: 20px;
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 20px;
+}
+
+.main img {
+	width: 300px;
+	height: 150px;
+	object-fit: cover;
+	filter: drop-shadow(1px 1px 5px black);
+	border-radius: 5px;
+	transition-property: transform;
+	transition-duration: 500ms;
+}
+
+.main img:hover {
+	transform: scale(1.1);
+	cursor: pointer;
+}
+
+
+/*---------------------------Estilos del FOOTER------------------------*/
+.footer {
+	grid-area: footer;
+	background-color: var(--usoPuntual);
+	color: white;
+	font-size: 0.4em;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+/*--------------------------- Adaptación a TABLETS------------------------*/
+
+@media (min-width: 800px) {
+
+	/*------HEADER-------*/
+
+	h1 {
+		font-size: 1.7em;
+		letter-spacing: 10px;	
+	}
+
+	header img {
+		height: 70px;
+	}
+
+	/*------NAV-------*/
+
+	.nav ul li a{
+		font-size: .6em;
+	}
+
+	/*------MAIN-------*/
+
+	h2 {
+		font-size: 0.7em;
+	}
+
+	.galeria {
+		margin-top: 20px;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 40px;
+	}
+
+
+
+	/*------FOOTER-------*/
+
+	.footer {
+		font-size: .7em;
+	}
+}
+
+/*--------------------------- Adaptación a ESCRITORIO------------------------*/
+
+@media (min-width: 1000px) {
+
+	body {
+		max-width: 1400px;
+	}
+
+	.container {
+		display: grid;
+		gap: 10px;
+		grid-template: 
+		"header" 200px
+		"nav" 80px
+		"main" auto
+		"footer" 60px;
+	}
+	/*------HEADER-------*/
+
+	h1 {
+		font-size: 2.3em;
+		letter-spacing: 12px;	
+	}
+
+	header img {
+		height: 100px;
+	}
+
+	/*------NAV-------*/
+	.nav ul li {
+		height: 55px;
+	}
+
+	.nav ul li a{
+		font-size: .8em;
+	}
+	span {
+		margin: 5px;
+	}
+
+	/*------MAIN-------*/
+
+	h2 {
+		font-size: 1em;
+	}
+
+	.galeria {
+		margin-top: 20px;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 40px;
+	}
+
+	
+
+
+	/*------FOOTER-------*/
+
+	.footer {
+		font-size: .8em;
+	}
+}
+
+
+
