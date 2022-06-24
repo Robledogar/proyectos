@@ -9,29 +9,31 @@ body {
 	align-items: center;
 	justify-content: center;
 	padding: 20px;
+	max-width: 1000px;
+	margin: 0 auto;
 }
 
 #contenedorTitulo {
 	width: 80%;
-	
-	margin-bottom: 30px;
+	margin-bottom: 20px;
 }
 
 h1{
-	font-size: 100px;
+	font-size: 40px;
 	margin: 0px 0 -25px 0;
 	border-bottom: 2px solid red;
-	
+	text-align: center;
 }
 
 h2 {
-	font-size: 40px;
+	font-size: 25px;
 	border-bottom: 2px solid red;
+	padding: 5px;
+	margin-top: 26px;
 }
 
 #contenedorLetras {
-	margin-top: 30px;
-	height: 300px;
+	height: 100px;
 	width: 100%;
 	display: flex;
 	justify-content: center;
@@ -44,34 +46,34 @@ h2 {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: 160px;
-	height: 160px;
+	width: 30px;
+	height: 30px;
 	box-shadow: 0px 0px 15px black;
 	border-radius: 10px;
 	padding: 10px;
-	margin: 20px;
+	margin: 10px;
 	background-color: #F1CA89;
 }
 
 h3 {
-	font-size: 140px;
+	font-size: 25px;
 }
 
 #contenedorCarta {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 650px;
+	height: 300px;
 	width: 100%;
-	margin-top: 30px;
+	margin-top: 20px;
 
 	
 
 }
 
 .carta {
-	width: 600px;
-	height: 600px;
+	width: 270px;
+	height: 270px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -85,17 +87,13 @@ h3 {
 
 	.cartaTitulo {
 		height: 15%;
-		width: 80%;
-		
-	
-		
+		width: 80%;	
 		
 	}
 
 		h4 {
-
 			margin: 10px;
-			font-size: 30px;
+			font-size: 20px;
 			border-bottom: 2px solid red;
 
 		}
@@ -106,21 +104,17 @@ h3 {
 		display: flex;
 		flex-direction: row;
 		align-items: flex-start;
-		justify-content: center;
-
-
-		
+		justify-content: center;	
 	}
 
 		h5 {
-			font-size: 60px;
+			font-size: 30px;
 			margin: 0;
-
 		}
 
 #contenedorTiempo {
-	width: 100px;
-	height: 150px;
+	width: 70px;
+	height: 120px;
 	margin-top: 0;
 	display: flex;
 	flex-direction: column;
@@ -132,21 +126,21 @@ h3 {
 
 h6 {
 	margin-bottom: 0;
-	font-size: 20px;
+	font-size: 15px;
 }
 
 #contenedorBotones {
-	margin: 50px;
+	margin: 10px;
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
-	gap: 100px;
+	gap: 50px;
 
 }
 	button {
-		width: 250px;
-		height: 90px;
-		font-size: 30px;
+		width: 90px;
+		height: 50px;
+		font-size: 15px;
 		background-color: #E0C097;
 		border: none;
 		border-radius: 10px;
@@ -159,7 +153,7 @@ h6 {
 	}
 
 #tiempo {
-	font-size: 90px;
+	font-size: 40px;
 	color: darkred;
 }
 
