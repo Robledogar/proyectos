@@ -38,31 +38,31 @@
 	}
 
 	20% {
-		transform: translate(-135px, 28px);/* "O" */
+		transform: translate(-133px, 28px);/* "O" */
 	}
 
 	40% {
-		transform: translate(-102px, -7px);/* "F" */
+		transform: translate(-100px, -7px);/* "F" */
 	}
 
 	50% {
-		transform: translate(-145px, 15px);/* "A" */
+		transform: translate(-145px, 16px);/* "A" */
 	}
 
 	60% {
-		transform: translate(-44px, -8px);/* "L" */
+		transform: translate(-40px, -7px);/* "L" */
 	}
 
 	70% {
-		transform: translate(-89px, 6px);/* "T" */
+		transform: translate(-87px, 7px);/* "T" */
 	}
 
 	80% {
-		transform: translate(-109px, -6px);/* "E" */
+		transform: translate(-109px, -5px);/* "E" */
 	}
 
 	100% {
-		transform: translate(-99px, 8px)/* "S" */
+		transform: translate(-97px, 8px)/* "S" */
 	}
 }
 
