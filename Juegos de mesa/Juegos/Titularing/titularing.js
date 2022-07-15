@@ -63,15 +63,11 @@ var cartas = [  "(LAS 4 PALABRAS DEL TITULAR DEBEN EMPEZAR CON LA MISMA LETRA)",
 				"NIÑO PRODIGIO...",
 				];
 
-
 var letraRandom;
 var cartaRandom;
 var tituloCarta;
 var segundos;
 var relojActivo = 0;
-
-
-
 
 function inicio() {
 	document.getElementById("nuevaRonda").onclick = nuevaRonda;
@@ -80,20 +76,12 @@ function inicio() {
 
 function iniciarReloj() {
 	if (segundos == 0) {
-		segundos = 120;
+		segundos = 90;
 		setTimeout(cuentaAtras,1000);
-	}
-		
-
-	
-	
+	}	
 }
 
-
-
 function nuevaRonda(){
-	
-	
 
 	if(relojActivo == 0) {
 		segundos = 0;
@@ -132,28 +120,18 @@ function cuentaAtras() {
 		relojActivo = 0;
 	}
 
-	
-	
-	
 }
-
-
-
-
 
 function generarCarta() {
 	document.getElementById("contenedorCarta").innerHTML = "";
 	cartaRandom = Math.floor(Math.random()*cartas.length);
-	if (cartaRandom <= 1) {
+	if (cartas[cartaRandom].includes("MISMA LETRA")) {
 		tituloCarta = "TRABALENGUAS";
-	}else if(cartaRandom > 1 && cartaRandom <= 38) {
-		tituloCarta = "TEMA";
-	} else {
+	}else if(cartas[cartaRandom].includes("...")) {
 		tituloCarta = "FRASE INICIAL";
+	} else {
+		tituloCarta = "TEMA";
 	}
-
-
-
 
 	document.getElementById("contenedorCarta").insertAdjacentHTML("beforeend",
 		`<div class="carta">

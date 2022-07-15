@@ -15,39 +15,39 @@ body {
 
 #contenedorTitulo {
 	width: 80%;
-	margin-bottom: 20px;
+
 }
 
 h1{
-	font-size: 40px;
+	font-size: 35px;
 	margin: 0px 0 -25px 0;
 	border-bottom: 2px solid red;
 	text-align: center;
+	
 }
 
 h2 {
-	font-size: 25px;
+	font-size: 20px;
 	border-bottom: 2px solid red;
 	padding: 5px;
-	margin-top: 26px;
+	margin-top: 27px;
 }
 
 #contenedorLetras {
-	height: 100px;
+	height: 200px;
 	width: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: flex-start;
-
-	
+	margin: 15px 0 -30px 0;
 }
 
 .letra {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: 30px;
-	height: 30px;
+	width: 40px;
+	height: 40px;
 	box-shadow: 0px 0px 15px black;
 	border-radius: 10px;
 	padding: 10px;
@@ -56,24 +56,26 @@ h2 {
 }
 
 h3 {
-	font-size: 25px;
+	font-size: 35px;
 }
 
 #contenedorCarta {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 300px;
-	width: 100%;
-	margin-top: 20px;
+	height: 200px;
+	width: 200%;
+	margin-top: -20px;
+	margin-bottom: 30px;
+	
 
 	
 
 }
 
 .carta {
-	width: 270px;
-	height: 270px;
+	width: 220px;
+	height: 220px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -99,7 +101,7 @@ h3 {
 		}
 
 	.cartaTexto {
-		margin-top: 50px;
+		margin-top: 30px;
 		height: 85%;
 		display: flex;
 		flex-direction: row;
@@ -107,30 +109,28 @@ h3 {
 		justify-content: center;	
 	}
 
-		h5 {
-			font-size: 30px;
-			margin: 0;
+		 h5 {
+			font-size: 20px;
 		}
 
 #contenedorTiempo {
-	width: 70px;
-	height: 120px;
-	margin-top: 0;
+	margin-top: 20px;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: space-between;
 	align-items: center;
+	margin: -5px;
 	
-
 }
 
+
 h6 {
-	margin-bottom: 0;
-	font-size: 15px;
+	margin-bottom: -30px;
+	font-size: 10px;
 }
 
 #contenedorBotones {
-	margin: 10px;
+	margin: -10px;
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
@@ -138,24 +138,28 @@ h6 {
 
 }
 	button {
-		width: 90px;
-		height: 50px;
-		font-size: 15px;
+		width: 70px;
+		height: 30px;
+		font-size: 10px;
 		background-color: #E0C097;
 		border: none;
 		border-radius: 10px;
 		box-shadow: 0px 0px 15px black;
+		font-weight: bold;
 	}
 
 	button:hover {
 		background-color: #C8C6C6;
 		cursor: pointer;
+		
 	}
 
 #tiempo {
-	font-size: 40px;
+	font-size: 20px;
 	color: darkred;
 }
+
+
 
 
 
