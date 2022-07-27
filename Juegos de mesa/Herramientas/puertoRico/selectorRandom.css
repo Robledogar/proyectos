@@ -1,0 +1,210 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	
+	font-size: 1.2rem;
+	margin: 10px;
+	background-color: ghostwhite;
+
+}
+h1 {
+	font-size: 1.5rem;
+	margin: 20px 0 20px 0;
+
+
+}
+
+button {
+	font-size: .8rem;
+	width: auto + 1px;
+	height: 30px;
+	border-radius: 5px;
+	border: none;
+	padding: 5px;
+	cursor: pointer;
+	box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
+}
+
+button:hover {
+	background-color: lightblue;
+
+}
+
+
+
+
+.titulo {
+	grid-area: titulo;
+	box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: white;
+}
+
+.edificiosN {
+	grid-area: edificiosN;
+	box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
+	background-color: white;
+	
+
+
+
+}
+
+
+
+	#edificioN1 {
+		grid-area: edificioN1;
+	}
+
+	#edificioN2 {
+		grid-area: edificioN2;
+	}
+
+	#edificioN3 {
+		grid-area: edificioN3;
+	}
+
+	#edificioN4 {
+		grid-area: edificioN4;
+	}
+
+	#edificioN5 {
+		grid-area: edificioN5;
+	}
+
+	#edificioN6 {
+		grid-area: edificioN6;
+	}
+
+	#edificioN7 {
+		grid-area: edificioN7;
+	}
+
+	#edificioN8 {
+		grid-area: edificioN8;
+	}
+
+	#edificioN9 {
+		grid-area: edificioN9;
+	}
+
+	#edificioN10 {
+		grid-area: edificioN10;
+	}
+
+	#edificioN11 {
+		grid-area: edificioN11;
+	}
+
+	#edificioN12 {
+		grid-area: edificioN12;
+	}
+
+
+
+	#edificioG1 {
+		grid-area: edificioG1;
+	}
+
+	#edificioG2 {
+		grid-area: edificioG2;
+	}
+
+	#edificioG3 {
+		grid-area: edificioG3;
+	}
+
+	#edificioG4 {
+		grid-area: edificioG4;
+	}
+
+	#edificioG5 {
+		grid-area: edificioG5;
+	}
+
+.edificio {
+	border-radius: 5px;
+	background-color:lightblue;
+	margin: 5px;
+	font-size: .5em;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	
+	
+	min-height: 20px;
+	padding: 5px;
+}
+
+.boton {
+	grid-area: boton;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: white;
+	box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
+
+}
+
+
+.contenedorPrincipal {
+
+	margin-top: 40px;
+	box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
+	border-radius: 4px;
+	padding: 10px;
+	text-align: center;
+	display: grid;
+	gap: 10px;
+
+	grid-template: 
+	"titulo" 10%
+	"edificiosN" auto
+	"edificiosG" auto
+	"boton" 10%
+	;
+}
+
+
+.edificiosN {
+	padding: 10px;
+	display: grid;
+	gap: 10px;
+	grid-template: 
+	"edificioN1 edificioN7" auto
+	"edificioN2 edificioN8" auto
+	"edificioN3 edificioN9" auto
+	"edificioN4 edificioN10" auto
+	"edificioN5 edificioN11" auto
+	"edificioN6 edificioN12" auto
+	/ auto	    auto         
+	;
+
+}
+
+
+.edificiosG {
+	background-color: white;
+	padding: 10px;
+	box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
+	grid-area: edificiosG;
+	display: grid;
+	gap: 5px;
+	grid-template: 
+	"edificioG1 edificioG2 edificioG3" auto
+	 "edificioG4 . edificioG5"
+	/ auto;
+}
+
+@media (min-width: 600px) {
+
+}
