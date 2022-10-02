@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>Planning Maquinistas</title>
+
+	<!--Estilos CSS -->
+
+	<style type="text/css">
+		* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	cursor: default;
+	font-weight: bold;
+}
+
+body {
+	width: 1300px;
+	
+
+}
+
+/*--------------Variables para los colores--------------*/
+
+:root {
+	--colorMaq1: #72A0C1;
+	--colorMaq2: #87A96B;
+	--colorMaq3: #FF9966;
+	--colorMaq4: #E9D66B;
+	--colorMaq5: #BF94E4;
+	--colorHabil: #85754E;
+	--porDefecto: #F8F8FF;
+	--colorBorrar: lightgrey;
+
+	--colorCelda: lightgrey;
+	--colordatos: white;
+
+	
+}
+
+#contenedorPrincipal {
+	width: 100%;
+	height: 350px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+	#contenedorTitulo {
+		background-color: #ddd;
+		border-bottom: 3px solid #c03;
+		width: 100%;
+		height: 50px;
+		padding: 2px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 20px;
+	}
+
+	#contenedorPlanning {
+		height: 350px;
+		padding: 10px;
+		box-shadow: 2px 2px 10px;
+		border-radius: 10px;
+	}
+
+		.grupoCeldas {
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+		}
+
+			#mc1 {
+				margin-top: 10px;
+			}
+
+			#primeraCelda {
+				visibility: hidden;
+			}
+
+			#horas {
+				font-size: 12px;
+				margin-bottom: -5px;
+
+
+			}
+
+
+			.celdaTitulo {
+				width: 40px;
+				height: 20px;
+				margin: 5px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				
+			}
+
+			.celda {
+				background-color: var(--colorCelda);
+				width: 40px;
+				height: 40px;
+				margin: 5px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				border-radius: 5px;
+				cursor: pointer;
+			}
+
+			.celda:hover {
+				transform: scale(1.1);
+			}
+
+	#contenedorBotones {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin:0px 20px 0px 20px;
+		box-shadow: 2px 2px 7px;
+		border-radius: 10px;
+		padding: 5px;
+	}
+
+	#contenedorBotones2 {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin:10px 0px 20px 20px;
+		box-shadow: 2px 2px 7px;
+		border-radius: 10px;
+		padding: 5px;
+	}
+
+	label {
+		font-size: 10px;
+	}
+
+	#contenedorCambioTurno {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: flex-start;
+		height: 100px;
+		margin-bottom: 10px;
+	}
+		
+
+	.boton {
+		width: 105px;
+		margin: 10px;
+		padding: 6px;
+		border-radius: 5px;
+		cursor: pointer;
+		box-shadow: 1px 1px 5px;
+		border: none;
+	}
+
+		#botonMaq1 {
+			background-color: var(--colorMaq1);
+		}
+
+		#botonMaq2 {
+			background-color: var(--colorMaq2);
+		}
+
+		#botonMaq3 {
+			background-color: var(--colorMaq3);
+		}
+
+		#botonMaq4 {
+			background-color: var(--colorMaq4);
+		}
+
+		#botonMaq5 {
+			background-color: var(--colorMaq5);
+		}
+
+		#botonHabil {
+			background-color: var(--colorHabil);
+		}
+
+		#botonPorDefecto {
+			background-color: var(--porDefecto);
+		}
+
+		#botonBorrar {
+			background-color: var(--colorBorrar);
+		}
+
+		#botonBorrarTodo {
+			background-color: var(--colorBorrar);
+		}
+
+		#botonCambioTurno {
+			font-size: 10px;
+			background-color: var(--porDefecto);
+		}
+
+		#botonCambioTurno:hover {
+			transform: scale(1.1);
+		}
+
+	.boton:hover {
+		transform: scale(1.1);
+	}
+
+
+#contenedorDatos {
+	display: flex;
+	justify-content: center;
+	width: 95%;
+	margin-top: 30px;
+	
+
+}
+		table {
+			font-size: 12px;
+			background-color: var(--colorDatos);
+			text-align: center;
+			box-shadow: 2px 2px 10px;
+			padding: 10px;
+			border-radius: 10px;
+		}
+
+			tr {
+				background-color:var(--colordatos);
+
+			}
+
+			#maq1 {
+				background-color: var(--colorMaq1);
+			}
+			#maq2 {
+				background-color: var(--colorMaq2);
+			}
+			#maq3 {
+				background-color: var(--colorMaq3);
+			}
+			#maq4 {
+				background-color: var(--colorMaq4);
+			}
+			#maq5 {
+				background-color: var(--colorMaq5);
+			}
+			#habilitados {
+				background-color: var(--colorHabil);
+			}
+
+				th {
+					padding: 5px;
+					border: 1px solid black;
+				}
+				td {
+					padding: 5px;
+					border: 1px solid black;
+					font-size: 15px;
+				}
+	</style>
+
+	
+
+</head>
+
+
+<body>
+
+	<div id="contenedorTitulo">
+			<h1>PLANNING MAQUINISTAS</h1>
+		</div>
+	<div id="contenedorPrincipal">
+
+		<div id="contenedorBotones">
+			<button class="boton" id="botonMaq1">MAQ 1</button>
+			<button class="boton" id="botonMaq2">MAQ 2</button>
+			<button class="boton" id="botonMaq3">MAQ 3</button>
+			<button class="boton" id="botonMaq4">MAQ 4</button>
+			<button class="boton" id="botonMaq5">MAQ 5</button>
+			<button class="boton" id="botonHabil">HABILITADOS</button>
+			<button class="boton" id="botonBorrar">BORRAR</button>
+			
+		</div>
+
+		<div id="contenedorPlanning">
+
+			<div  class="grupoCeldas" id="horas">
+				<div  class="celdaTitulo" id="primeraCelda">0000</div> <!--celda ocultada de la esquina -->
+				<div  class="celdaTitulo" id="h1">6:00</div>
+				<div  class="celdaTitulo" id="h2">6:30</div>
+				<div  class="celdaTitulo" id="h3">7:00</div>
+				<div  class="celdaTitulo" id="h4">7:30</div>
+				<div  class="celdaTitulo" id="h5">8:00</div>
+				<div  class="celdaTitulo" id="h6">8:30</div>
+				<div  class="celdaTitulo" id="h7">9:00</div>
+				<div  class="celdaTitulo" id="h8">9:30</div>
+				<div  class="celdaTitulo" id="h9">10:00</div>
+				<div  class="celdaTitulo" id="h10">10:30</div>
+				<div  class="celdaTitulo" id="h11">11:00</div>
+				<div  class="celdaTitulo" id="h12">11:30</div>
+				<div  class="celdaTitulo" id="h13">12:00</div>
+				<div  class="celdaTitulo" id="h14">12:30</div>
+				<div  class="celdaTitulo" id="h15">13:00</div>
+				<div  class="celdaTitulo" id="h16">13:30</div>
+				<div  class="celdaTitulo" id="h17">14:00</div>
+
+				
+			</div>
+
+			<div  class="grupoCeldas" id="dc1">
+				<div  class="celdaTitulo">DC1</div>
+				<div  class="celda" id="dc1_1"></div>
+				<div  class="celda" id="dc1_2"></div>
+				<div  class="celda" id="dc1_3"></div>
+				<div  class="celda" id="dc1_4"></div>
+				<div  class="celda" id="dc1_5"></div>
+				<div  class="celda" id="dc1_6"></div>
+				<div  class="celda" id="dc1_7"></div>
+				<div  class="celda" id="dc1_8"></div>
+				<div  class="celda" id="dc1_9"></div>
+				<div  class="celda" id="dc1_10"></div>
+				<div  class="celda" id="dc1_11"></div>
+				<div  class="celda" id="dc1_12"></div>
+				<div  class="celda" id="dc1_13"></div>
+				<div  class="celda" id="dc1_14"></div>
+				<div  class="celda" id="dc1_15"></div>
+				<div  class="celda" id="dc1_16"></div>
+			</div>
+
+			<div  class="grupoCeldas" id="gr1">
+				<div  class="celdaTitulo">GR1</div>
+				<div  class="celda" id="gr1_1"></div>
+				<div  class="celda" id="gr1_2"></div>
+				<div  class="celda" id="gr1_3"></div>
+				<div  class="celda" id="gr1_4"></div>
+				<div  class="celda" id="gr1_5"></div>
+				<div  class="celda" id="gr1_6"></div>
+				<div  class="celda" id="gr1_7"></div>
+				<div  class="celda" id="gr1_8"></div>
+				<div  class="celda" id="gr1_9"></div>
+				<div  class="celda" id="gr1_10"></div>
+				<div  class="celda" id="gr1_11"></div>
+				<div  class="celda" id="gr1_12"></div>
+				<div  class="celda" id="gr1_13"></div>
+				<div  class="celda" id="gr1_14"></div>
+				<div  class="celda" id="gr1_15"></div>
+				<div  class="celda" id="gr1_16"></div>
+			</div>
+
+			<div  class="grupoCeldas" id="dc3">
+				<div  class="celdaTitulo">DC3</div>
+				<div  class="celda" id="dc3_1"></div>
+				<div  class="celda" id="dc3_2"></div>
+				<div  class="celda" id="dc3_3"></div>
+				<div  class="celda" id="dc3_4"></div>
+				<div  class="celda" id="dc3_5"></div>
+				<div  class="celda" id="dc3_6"></div>
+				<div  class="celda" id="dc3_7"></div>
+				<div  class="celda" id="dc3_8"></div>
+				<div  class="celda" id="dc3_9"></div>
+				<div  class="celda" id="dc3_10"></div>
+				<div  class="celda" id="dc3_11"></div>
+				<div  class="celda" id="dc3_12"></div>
+				<div  class="celda" id="dc3_13"></div>
+				<div  class="celda" id="dc3_14"></div>
+				<div  class="celda" id="dc3_15"></div>
+				<div  class="celda" id="dc3_16"></div>
+			</div>
+
+			<div  class="grupoCeldas" id="mc1">
+				<div  class="celdaTitulo">MC1</div>
+				<div  class="celda" id="mc1_1"></div>
+				<div  class="celda" id="mc1_2"></div>
+				<div  class="celda" id="mc1_3"></div>
+				<div  class="celda" id="mc1_4"></div>
+				<div  class="celda" id="mc1_5"></div>
+				<div  class="celda" id="mc1_6"></div>
+				<div  class="celda" id="mc1_7"></div>
+				<div  class="celda" id="mc1_8"></div>
+				<div  class="celda" id="mc1_9"></div>
+				<div  class="celda" id="mc1_10"></div>
+				<div  class="celda" id="mc1_11"></div>
+				<div  class="celda" id="mc1_12"></div>
+				<div  class="celda" id="mc1_13"></div>
+				<div  class="celda" id="mc1_14"></div>
+				<div  class="celda" id="mc1_15"></div>
+				<div  class="celda" id="mc1_16"></div>
+			</div>
+
+			<div  class="grupoCeldas" id="mc2">
+				<div  class="celdaTitulo">MC2</div>
+				<div  class="celda" id="mc2_1"></div>
+				<div  class="celda" id="mc2_2"></div>
+				<div  class="celda" id="mc2_3"></div>
+				<div  class="celda" id="mc2_4"></div>
+				<div  class="celda" id="mc2_5"></div>
+				<div  class="celda" id="mc2_6"></div>
+				<div  class="celda" id="mc2_7"></div>
+				<div  class="celda" id="mc2_8"></div>
+				<div  class="celda" id="mc2_9"></div>
+				<div  class="celda" id="mc2_10"></div>
+				<div  class="celda" id="mc2_11"></div>
+				<div  class="celda" id="mc2_12"></div>
+				<div  class="celda" id="mc2_13"></div>
+				<div  class="celda" id="mc2_14"></div>
+				<div  class="celda" id="mc2_15"></div>
+				<div  class="celda" id="mc2_16"></div>
+			</div>
+
+			<div  class="grupoCeldas" id="mc3">
+				<div  class="celdaTitulo">MC3</div>
+				<div  class="celda" id="mc3_1"></div>
+				<div  class="celda" id="mc3_2"></div>
+				<div  class="celda" id="mc3_3"></div>
+				<div  class="celda" id="mc3_4"></div>
+				<div  class="celda" id="mc3_5"></div>
+				<div  class="celda" id="mc3_6"></div>
+				<div  class="celda" id="mc3_7"></div>
+				<div  class="celda" id="mc3_8"></div>
+				<div  class="celda" id="mc3_9"></div>
+				<div  class="celda" id="mc3_10"></div>
+				<div  class="celda" id="mc3_11"></div>
+				<div  class="celda" id="mc3_12"></div>
+				<div  class="celda" id="mc3_13"></div>
+				<div  class="celda" id="mc3_14"></div>
+				<div  class="celda" id="mc3_15"></div>
+				<div  class="celda" id="mc3_16"></div>
+			</div>
+
+		</div>
+
+		
+
+		<div id="contenedorBotones2">
+			<div id="contenedorCambioTurno">
+			<label id="nombreTurno">MAÑANA</label>
+			<label id="turno">6:00 a 14:00</label>
+			<button class="boton" id="botonCambioTurno">CAMBIAR TURNO</button>
+			</div>
+			<button class="boton" id="botonPorDefecto">CONFIG NORMAL</button>
+			
+			<button class="boton" id="botonBorrarTodo">BORRAR TODO</button>
+			
+		</div>
+		
+	</div>
+
+	<div id="contenedorDatos">
+		<table id="tabla">
+			<tr id="cabeceraTabla">
+				<th id="">OPERARIO</th>
+				<th id="">MÁXIMO HORAS</th>
+				<th id="">HORAS PROGRAMADAS</th>
+				<th id="">DESCANSO</th>
+				
+				<th id="">DESCANSO PROGRAMADO</th>
+			</tr>
+
+			<tr>
+				<th id="maq1">MAQ 1</th>
+				<td id="">5 Horas</td>
+				<td id="horasMaq1">0 Horas</td>
+				<td id="">3 Horas</td>
+				
+				<td id="descansoMaq1">8 Horas</td>
+			</tr>
+
+			<tr>
+				<th id="maq2">MAQ 2</th>
+				<td id="">5 Horas</td>
+				<td id="horasMaq2">0 Horas</td>
+				<td id="">3 Horas</td>
+				
+				<td id="descansoMaq2">8 Horas</td>
+			</tr>
+
+			<tr>
+				<th id="maq3">MAQ 3</th>
+				<td id="">5 Horas</td>
+				<td id="horasMaq3">0 Horas</td>
+				<td id="">3 Horas</td>
+				
+				<td id="descansoMaq3">8 Horas</td>
+			</tr>
+
+			<tr>
+				<th id="maq4">MAQ 4</th>
+				<td id="">5 Horas</td>
+				<td id="horasMaq4">0 Horas</td>
+				<td id="">3 Horas</td>
+				
+				<td id="descansoMaq4">8 Horas</td>
+			</tr>
+
+			<tr>
+				<th id="maq5">MAQ 5</th>
+				<td id="">4 Horas</td>
+				<td id="horasMaq5">0 Horas</td>
+				<td id="">4 Horas</td>
+				
+				<td id="descansoMaq5">8 Horas</td>
+			</tr>
+
+			<tr>
+				<th id="habilitados">HABILITADOS</th>
+				<td id="">∞</td>
+				<td id="horasHabil">0 Horas</td>
+				<td id="">∞</td>
+				
+				<td id="descansoHabil">8 Horas</td>
+			</tr>
+		</table>
+	</div>
+
+	<!-- Script JS -->
+	<script type="text/javascript" defer>
+		window.onload = actualizarHoras;
+
+/*-------------------- Variables para botones  -----------------*/
+			/*--------- activos o inactivos -----------*/
+
+let maquinista1 = false;
+let maquinista2 = false;
+let maquinista3 = false;
+let maquinista4 = false;
+let maquinista5 = false;
+let habil = false;
+
+let borrar = false;
+
+
+
+
+
+/*----------------- Variable para las celdas -----------------*/
+/*--------- guarda el id de la última celda pulsada -----------*/
+
+let celdaPulsada;
+
+
+
+/*----- Variables para sumar horas de trabajo/descanso -----*/
+let horasMaq1 = 0;
+let horasMaq2 = 0;
+let horasMaq3 = 0;
+let horasMaq4 = 0;
+let horasMaq5 = 0;
+let horasHabil = 0;
+
+let descansoMaq1 = 8;
+let descansoMaq2 = 8;
+let descansoMaq3 = 8;
+let descansoMaq4 = 8;
+let descansoMaq5 = 8;
+let descansoHabil = 8;
+
+
+/*----------------- Otras variables -----------------*/
+let turnoDeTrabajo = "Tarde"; //Estados (Mañana, Tarde y Noche)
+
+
+/*-------- Asignación del onclick a los botones  -------------*/
+
+document.getElementById("botonMaq1").onclick=marcadoMaquinista1;
+document.getElementById("botonMaq2").onclick=marcadoMaquinista2;
+document.getElementById("botonMaq3").onclick=marcadoMaquinista3;
+document.getElementById("botonMaq4").onclick=marcadoMaquinista4;
+document.getElementById("botonMaq5").onclick=marcadoMaquinista5;
+document.getElementById("botonHabil").onclick=marcadoHabil;
+
+document.getElementById("botonBorrar").onclick=marcadoBorrar;
+document.getElementById("botonPorDefecto").onclick=porDefecto;
+document.getElementById("botonBorrarTodo").onclick=borrarTodo;
+
+document.getElementById("botonCambioTurno").onclick=seleccionarTurno;
+
+
+
+
+/*-------- Asignación del onclick a las celdas -------------*/
+
+for(let i=0; i<96; i++) {
+	document.querySelectorAll(".celda")[i].onclick=cambiarColor;
+}
+
+
+
+
+/*--------------------------- FUNCIONES -----------------------------*/
+			
+		/*activa y desactiva el marcado de los botones*/
+
+function marcadoMaquinista1() { 
+
+	if(maquinista1==false && maquinista2==false && maquinista3==false && maquinista4==false && maquinista5==false && habil==false && borrar==false) {
+		maquinista1 = true;
+		document.getElementById("botonMaq1").setAttribute("style","outline: 4px solid red;");
+	
+	} else {//si es true
+		maquinista1 = false;
+		document.getElementById("botonMaq1").setAttribute("style","outline: none;");
+	}
+}
+
+function marcadoMaquinista2() { 
+
+	if(maquinista2==false && maquinista1==false && maquinista3==false && maquinista4==false && maquinista5==false && habil==false && borrar==false) {
+		maquinista2 = true;
+		document.getElementById("botonMaq2").setAttribute("style","outline: 4px solid red;");
+	
+	} else {//si es true
+		maquinista2 = false;
+		document.getElementById("botonMaq2").setAttribute("style","outline: none;");
+	}
+}
+
+function marcadoMaquinista3() { 
+
+	if(maquinista3==false && maquinista1==false && maquinista2==false && maquinista4==false && maquinista5==false && habil==false && borrar==false) {
+		maquinista3 = true;
+		document.getElementById("botonMaq3").setAttribute("style","outline: 4px solid red;");
+	
+	} else {//si es true
+		maquinista3 = false;
+		document.getElementById("botonMaq3").setAttribute("style","outline: none;");
+	}
+}
+
+function marcadoMaquinista4() { 
+
+	if(maquinista4==false && maquinista1==false && maquinista2==false && maquinista3==false && maquinista5==false && habil==false && borrar==false) {
+		maquinista4 = true;
+		document.getElementById("botonMaq4").setAttribute("style","outline: 4px solid red;");
+	
+	} else {//si es true
+		maquinista4 = false;
+		document.getElementById("botonMaq4").setAttribute("style","outline: none;");
+	}
+}
+
+function marcadoMaquinista5() { 
+
+	if(maquinista5==false && maquinista1==false && maquinista2==false && maquinista3==false && maquinista4==false && habil==false && borrar==false) {
+		maquinista5 = true;
+		document.getElementById("botonMaq5").setAttribute("style","outline: 4px solid red;");
+	
+	} else {//si es true
+		maquinista5 = false;
+		document.getElementById("botonMaq5").setAttribute("style","outline: none;");
+	}
+}
+
+function marcadoHabil() { 
+
+	if(habil==false && maquinista1==false && maquinista2==false && maquinista3==false && maquinista4==false && maquinista5==false && borrar==false) {
+		habil = true;
+		document.getElementById("botonHabil").setAttribute("style","outline: 4px solid red;");
+	
+	} else {//si es true
+		habil = false;
+		document.getElementById("botonHabil").setAttribute("style","outline: none;");
+	}
+}
+
+
+
+function marcadoBorrar() { 
+
+	if(borrar==false && maquinista1==false && maquinista2==false && maquinista3==false && maquinista4==false && maquinista5==false && habil==false) {
+		borrar = true;
+		document.getElementById("botonBorrar").setAttribute("style","outline: 4px solid red;");
+
+	
+	} else {//si es true
+		borrar = false;
+		document.getElementById("botonBorrar").setAttribute("style","outline: none;");
+	}
+}
+
+
+						/*rellena o vacia las celdas*/
+
+function cambiarColor() {
+	celdaPulsada = this.id;
+
+	if(maquinista1==true) {
+
+		if(document.getElementById(celdaPulsada).innerHTML !== "M1") {
+			horasMaq1 += .5; 
+			descansoMaq1 -= 0.5;
+		}
+		document.getElementById(celdaPulsada).setAttribute("style", "background: var(--colorMaq1)");
+		document.getElementById(celdaPulsada).innerHTML = "M1";
+		
+
+	} else if(maquinista2==true) {
+		if(document.getElementById(celdaPulsada).innerHTML !== "M2") {
+			horasMaq2 += .5; 
+			descansoMaq2 -= 0.5;
+		}
+		document.getElementById(celdaPulsada).setAttribute("style", "background: var(--colorMaq2)");
+		document.getElementById(celdaPulsada).innerHTML = "M2";
+
+
+	}else if(maquinista3==true) {
+		if(document.getElementById(celdaPulsada).innerHTML !== "M3") {
+			horasMaq3 += .5; 
+			descansoMaq3 -= 0.5;
+		}
+		document.getElementById(celdaPulsada).setAttribute("style", "background: var(--colorMaq3)");
+		document.getElementById(celdaPulsada).innerHTML = "M3";
+
+
+	}else if(maquinista4==true) {
+		if(document.getElementById(celdaPulsada).innerHTML !== "M4") {
+			horasMaq4 += .5; 
+			descansoMaq4 -= 0.5;
+		}
+		document.getElementById(celdaPulsada).setAttribute("style", "background: var(--colorMaq4)");
+		document.getElementById(celdaPulsada).innerHTML = "M4";
+
+
+	}else if(maquinista5==true) {
+		if(document.getElementById(celdaPulsada).innerHTML !== "M5") {
+			horasMaq5 += .5; 
+			descansoMaq5 -= 0.5;
+		}
+		document.getElementById(celdaPulsada).setAttribute("style", "background: var(--colorMaq5)");
+		document.getElementById(celdaPulsada).innerHTML = "M5";
+
+
+	}else if(habil==true) {
+		if(document.getElementById(celdaPulsada).innerHTML !== "HAB") {
+			horasHabil += .5; 
+			if(descansoHabil>0){
+				descansoHabil -= 0.5;
+			}
+			
+		}
+		document.getElementById(celdaPulsada).setAttribute("style", "background: var(--colorHabil)");
+		document.getElementById(celdaPulsada).innerHTML = "HAB";
+
+
+	}else if (borrar==true) {
+
+		if(document.getElementById(celdaPulsada).innerHTML=="M1") {
+			horasMaq1 -= .5;
+			descansoMaq1 += 0.5;
+
+		} else if (document.getElementById(celdaPulsada).innerHTML=="M2") {
+			horasMaq2 -= .5;
+			descansoMaq2 += 0.5;
+
+		}else if (document.getElementById(celdaPulsada).innerHTML=="M3") {
+			horasMaq3 -= .5;
+			descansoMaq3 += 0.5;
+
+		}else if (document.getElementById(celdaPulsada).innerHTML=="M4") {
+			horasMaq4 -= .5;
+			descansoMaq4 += 0.5;
+
+		}else if (document.getElementById(celdaPulsada).innerHTML=="M5") {
+			horasMaq5 -= .5;
+			descansoMaq5 += 0.5;
+
+		}else if (document.getElementById(celdaPulsada).innerHTML=="HAB") {
+			horasHabil -= .5;
+			descansoHabil += 0.5;
+		}
+
+
+		document.getElementById(celdaPulsada).setAttribute("style", "background: var(--colorCelda)");
+		document.getElementById(celdaPulsada).innerHTML = "";
+
+
+	}
+
+
+	actualizarHoras();	//actualiza la tabla
+}
+
+
+					/*Actualiza la tabla*/
+
+function actualizarHoras() {
+	document.getElementById("horasMaq1").innerHTML = `${horasMaq1} Horas`;
+	document.getElementById("horasMaq2").innerHTML = `${horasMaq2} Horas`;
+	document.getElementById("horasMaq3").innerHTML = `${horasMaq3} Horas`;
+	document.getElementById("horasMaq4").innerHTML = `${horasMaq4} Horas`;
+	document.getElementById("horasMaq5").innerHTML = `${horasMaq5} Horas`;
+	document.getElementById("horasHabil").innerHTML = `${horasHabil} Horas`;
+
+	document.getElementById("descansoMaq1").innerHTML = `${descansoMaq1} Horas`;
+	document.getElementById("descansoMaq2").innerHTML = `${descansoMaq2} Horas`;
+	document.getElementById("descansoMaq3").innerHTML = `${descansoMaq3} Horas`;
+	document.getElementById("descansoMaq4").innerHTML = `${descansoMaq4} Horas`;
+	document.getElementById("descansoMaq5").innerHTML = `${descansoMaq5} Horas`;
+	document.getElementById("descansoHabil").innerHTML = `${descansoHabil} Horas`;
+
+	if(horasMaq1>5) {
+		document.getElementById("horasMaq1").setAttribute("style", "color: red")
+	}else if(horasMaq1==5) {
+		document.getElementById("horasMaq1").setAttribute("style", "color: black")
+	}else {
+		document.getElementById("horasMaq1").setAttribute("style", "color: green")
+	}
+
+	if(horasMaq2>5) {
+		document.getElementById("horasMaq2").setAttribute("style", "color: red")
+	}else if(horasMaq2==5) {
+		document.getElementById("horasMaq2").setAttribute("style", "color: black")
+	}else {
+		document.getElementById("horasMaq2").setAttribute("style", "color: green")
+	}
+
+	if(horasMaq3>5) {
+		document.getElementById("horasMaq3").setAttribute("style", "color: red")
+	}else if(horasMaq3==5) {
+		document.getElementById("horasMaq3").setAttribute("style", "color: black")
+	}else {
+		document.getElementById("horasMaq3").setAttribute("style", "color: green")
+	}
+
+	if(horasMaq4>5) {
+		document.getElementById("horasMaq4").setAttribute("style", "color: red")
+	}else if(horasMaq4==5) {
+		document.getElementById("horasMaq4").setAttribute("style", "color: black")
+	}else {
+		document.getElementById("horasMaq4").setAttribute("style", "color: green")
+	}
+
+	if(horasMaq5>4) {
+		document.getElementById("horasMaq5").setAttribute("style", "color: red")
+	}else if(horasMaq5==4) {
+		document.getElementById("horasMaq5").setAttribute("style", "color: black")
+	}else {
+		document.getElementById("horasMaq5").setAttribute("style", "color: green")
+	}
+
+	
+	document.getElementById("horasHabil").setAttribute("style", "color: green")
+	
+
+
+
+	if(descansoMaq1<3) {
+		document.getElementById("descansoMaq1").setAttribute("style", "color: red")
+	}else if(descansoMaq1==3) {
+		document.getElementById("descansoMaq1").setAttribute("style", "color: black")
+	}else {
+		document.getElementById("descansoMaq1").setAttribute("style", "color: green")
+	}
+
+	if(descansoMaq2<3) {
+		document.getElementById("descansoMaq2").setAttribute("style", "color: red")
+	}else if(descansoMaq2==3) {
+		document.getElementById("descansoMaq2").setAttribute("style", "color: black")
+	}else {
+		document.getElementById("descansoMaq2").setAttribute("style", "color: green")
+	}
+
+	if(descansoMaq3<3) {
+		document.getElementById("descansoMaq3").setAttribute("style", "color: red")
+	}else if(descansoMaq3==3) {
+		document.getElementById("descansoMaq3").setAttribute("style", "color: black")
+	}else {
+		document.getElementById("descansoMaq3").setAttribute("style", "color: green")
+	}
+
+	if(descansoMaq4<3) {
+		document.getElementById("descansoMaq4").setAttribute("style", "color: red")
+	}else if(descansoMaq4==3) {
+		document.getElementById("descansoMaq4").setAttribute("style", "color: black")
+	}else {
+		document.getElementById("descansoMaq4").setAttribute("style", "color: green")
+	}
+
+	if(descansoMaq5<4) {
+		document.getElementById("descansoMaq5").setAttribute("style", "color: red")
+	}else if(descansoMaq5==4) {
+		document.getElementById("descansoMaq5").setAttribute("style", "color: black")
+	}else {
+		document.getElementById("descansoMaq5").setAttribute("style", "color: green")
+	}
+	
+	document.getElementById("descansoHabil").setAttribute("style", "color: green")
+	
+
+
+}
+
+
+			/*--------------Borra todo el planning------------*/
+
+function borrarTodo() {
+	if(maquinista1==false && maquinista2==false && maquinista3==false && maquinista4==false && maquinista5==false && habil==false && borrar==false) {
+		for(let i=0; i<96; i++) {
+		document.querySelectorAll(".celda")[i].setAttribute("style", "background: var(--colorCelda)");
+		document.querySelectorAll(".celda")[i].innerHTML = "";
+		}
+
+		horasMaq1 = 0;
+		horasMaq2 = 0;
+		horasMaq3 = 0;
+		horasMaq4 = 0;
+		horasMaq5 = 0;
+		horasHabil = 0;
+
+		descansoMaq1 = 8;
+		descansoMaq2 = 8;
+		descansoMaq3 = 8;
+		descansoMaq4 = 8;
+		descansoMaq5 = 8;
+		descansoHabil = 8;
+
+		
+
+		actualizarHoras();
+	}
+
+	
+}
+
+
+	/*--------Asigna la configuración de personal por defecto-----*/
+
+function porDefecto() {
+
+	if(maquinista1==false && maquinista2==false && maquinista3==false && maquinista4==false && maquinista5==false && habil==false && borrar==false) {
+
+	//DC1
+	document.getElementById("dc1_1").setAttribute("style", "background: var(--colorMaq1)");
+	document.getElementById("dc1_1").innerHTML = "M1";
+
+	document.getElementById("dc1_2").setAttribute("style", "background: var(--colorMaq1)");
+	document.getElementById("dc1_2").innerHTML = "M1";
+
+	document.getElementById("dc1_3").setAttribute("style", "background: var(--colorMaq2)");
+	document.getElementById("dc1_3").innerHTML = "M2";
+
+	document.getElementById("dc1_4").setAttribute("style", "background: var(--colorMaq2)");
+	document.getElementById("dc1_4").innerHTML = "M2";
+
+	document.getElementById("dc1_5").setAttribute("style", "background: var(--colorMaq3)");
+	document.getElementById("dc1_5").innerHTML = "M3";
+
+	document.getElementById("dc1_6").setAttribute("style", "background: var(--colorMaq3)");
+	document.getElementById("dc1_6").innerHTML = "M3";
+
+	document.getElementById("dc1_7").setAttribute("style", "background: var(--colorMaq3)");
+	document.getElementById("dc1_7").innerHTML = "M3";
+
+	document.getElementById("dc1_8").setAttribute("style", "background: var(--colorMaq3)");
+	document.getElementById("dc1_8").innerHTML = "M3";
+
+	document.getElementById("dc1_9").setAttribute("style", "background: var(--colorMaq4)");
+	document.getElementById("dc1_9").innerHTML = "M4";
+
+	document.getElementById("dc1_10").setAttribute("style", "background: var(--colorMaq4)");
+	document.getElementById("dc1_10").innerHTML = "M4";
+
+	document.getElementById("dc1_11").setAttribute("style", "background: var(--colorMaq4)");
+	document.getElementById("dc1_11").innerHTML = "M4";
+
+	document.getElementById("dc1_12").setAttribute("style", "background: var(--colorMaq4)");
+	document.getElementById("dc1_12").innerHTML = "M4";
+
+	document.getElementById("dc1_13").setAttribute("style", "background: var(--colorMaq2)");
+	document.getElementById("dc1_13").innerHTML = "M2";
+
+	document.getElementById("dc1_14").setAttribute("style", "background: var(--colorMaq2)");
+	document.getElementById("dc1_14").innerHTML = "M2";
+
+	document.getElementById("dc1_15").setAttribute("style", "background: var(--colorMaq2)");
+	document.getElementById("dc1_15").innerHTML = "M2";
+
+	document.getElementById("dc1_16").setAttribute("style", "background: var(--colorMaq2)");
+	document.getElementById("dc1_16").innerHTML = "M2";
+
+	//GR1
+	document.getElementById("gr1_1").setAttribute("style", "background: var(--colorMaq5)");
+	document.getElementById("gr1_1").innerHTML = "M5";
+
+	document.getElementById("gr1_2").setAttribute("style", "background: var(--colorMaq5)");
+	document.getElementById("gr1_2").innerHTML = "M5";
+
+	document.getElementById("gr1_3").setAttribute("style", "background: var(--colorMaq5)");
+	document.getElementById("gr1_3").innerHTML = "M5";
+
+	document.getElementById("gr1_4").setAttribute("style", "background: var(--colorMaq5)");
+	document.getElementById("gr1_4").innerHTML = "M5";
+
+	document.getElementById("gr1_5").setAttribute("style", "background: var(--colorMaq1)");
+	document.getElementById("gr1_5").innerHTML = "M1";
+
+	document.getElementById("gr1_6").setAttribute("style", "background: var(--colorMaq1)");
+	document.getElementById("gr1_6").innerHTML = "M1";
+
+	document.getElementById("gr1_7").setAttribute("style", "background: var(--colorMaq1)");
+	document.getElementById("gr1_7").innerHTML = "M1";
+
+	document.getElementById("gr1_8").setAttribute("style", "background: var(--colorMaq1)");
+	document.getElementById("gr1_8").innerHTML = "M1";
+
+	document.getElementById("gr1_9").setAttribute("style", "background: var(--colorMaq5)");
+	document.getElementById("gr1_9").innerHTML = "M5";
+
+	document.getElementById("gr1_10").setAttribute("style", "background: var(--colorMaq5)");
+	document.getElementById("gr1_10").innerHTML = "M5";
+
+	document.getElementById("gr1_11").setAttribute("style", "background: var(--colorMaq5)");
+	document.getElementById("gr1_11").innerHTML = "M5";
+
+	document.getElementById("gr1_12").setAttribute("style", "background: var(--colorMaq5)");
+	document.getElementById("gr1_12").innerHTML = "M5";
+
+	document.getElementById("gr1_13").setAttribute("style", "background: var(--colorMaq1)");
+	document.getElementById("gr1_13").innerHTML = "M1";
+
+	document.getElementById("gr1_14").setAttribute("style", "background: var(--colorMaq1)");
+	document.getElementById("gr1_14").innerHTML = "M1";
+
+	document.getElementById("gr1_15").setAttribute("style", "background: var(--colorMaq1)");
+	document.getElementById("gr1_15").innerHTML = "M1";
+
+	document.getElementById("gr1_16").setAttribute("style", "background: var(--colorMaq1)");
+	document.getElementById("gr1_16").innerHTML = "M1";
+
+	//DC3
+	document.getElementById("dc3_1").setAttribute("style", "background: var(--colorMaq3)");
+	document.getElementById("dc3_1").innerHTML = "M3";
+
+	document.getElementById("dc3_2").setAttribute("style", "background: var(--colorMaq3)");
+	document.getElementById("dc3_2").innerHTML = "M3";
+
+	document.getElementById("dc3_3").setAttribute("style", "background: var(--colorMaq4)");
+	document.getElementById("dc3_3").innerHTML = "M4";
+
+	document.getElementById("dc3_4").setAttribute("style", "background: var(--colorMaq4)");
+	document.getElementById("dc3_4").innerHTML = "M4";
+
+	document.getElementById("dc3_5").setAttribute("style", "background: var(--colorMaq4)");
+	document.getElementById("dc3_5").innerHTML = "M4";
+
+	document.getElementById("dc3_6").setAttribute("style", "background: var(--colorMaq4)");
+	document.getElementById("dc3_6").innerHTML = "M4";
+
+	document.getElementById("dc3_7").setAttribute("style", "background: var(--colorMaq2)");
+	document.getElementById("dc3_7").innerHTML = "M2";
+
+	document.getElementById("dc3_8").setAttribute("style", "background: var(--colorMaq2)");
+	document.getElementById("dc3_8").innerHTML = "M2";
+
+	document.getElementById("dc3_9").setAttribute("style", "background: var(--colorMaq2)");
+	document.getElementById("dc3_9").innerHTML = "M2";
+
+	document.getElementById("dc3_10").setAttribute("style", "background: var(--colorMaq2)");
+	document.getElementById("dc3_10").innerHTML = "M2";
+
+	document.getElementById("dc3_11").setAttribute("style", "background: var(--colorMaq3)");
+	document.getElementById("dc3_11").innerHTML = "M3";
+
+	document.getElementById("dc3_12").setAttribute("style", "background: var(--colorMaq3)");
+	document.getElementById("dc3_12").innerHTML = "M3";
+
+	document.getElementById("dc3_13").setAttribute("style", "background: var(--colorMaq3)");
+	document.getElementById("dc3_13").innerHTML = "M3";
+
+	document.getElementById("dc3_14").setAttribute("style", "background: var(--colorMaq3)");
+	document.getElementById("dc3_14").innerHTML = "M3";
+
+	document.getElementById("dc3_15").setAttribute("style", "background: var(--colorMaq4)");
+	document.getElementById("dc3_15").innerHTML = "M4";
+
+	document.getElementById("dc3_16").setAttribute("style", "background: var(--colorMaq4)");
+	document.getElementById("dc3_16").innerHTML = "M4";
+
+	for(let i=48; i<96; i++) {
+		document.querySelectorAll(".celda")[i].setAttribute("style", "background: var(--colorCelda)");
+		document.querySelectorAll(".celda")[i].innerHTML = "";
+		}
+
+	horasMaq1 = 5;
+	horasMaq2 = 5;
+	horasMaq3 = 5;
+	horasMaq4 = 5;
+	horasMaq5 = 4;
+	horasHabil = 0;
+
+	descansoMaq1 = 3;
+	descansoMaq2 = 3;
+	descansoMaq3 = 3;
+	descansoMaq4 = 3;
+	descansoMaq5 = 4;
+	descansoHabil = 8;
+
+	actualizarHoras();
+	}
+}
+
+
+/* ------------------Selección del turno-----------------*/
+
+function seleccionarTurno() {
+
+	if (turnoDeTrabajo=="Tarde") {
+		turnoDeTrabajo="Noche";
+		document.getElementById("nombreTurno").innerHTML="TARDE";
+		document.getElementById("turno").innerHTML="14:00 a 22:00";
+		document.getElementById("h1").innerHTML="14:00";
+		document.getElementById("h2").innerHTML="14:30";
+		document.getElementById("h3").innerHTML="15:00";
+		document.getElementById("h4").innerHTML="15:30";
+		document.getElementById("h5").innerHTML="16:00";
+		document.getElementById("h6").innerHTML="16:30";
+		document.getElementById("h7").innerHTML="17:00";
+		document.getElementById("h8").innerHTML="17:30";
+		document.getElementById("h9").innerHTML="18:00";
+		document.getElementById("h10").innerHTML="18:30";
+		document.getElementById("h11").innerHTML="19:00";
+		document.getElementById("h12").innerHTML="19:30";
+		document.getElementById("h13").innerHTML="20:00";
+		document.getElementById("h14").innerHTML="20:30";
+		document.getElementById("h15").innerHTML="21:00";
+		document.getElementById("h16").innerHTML="21:30";
+		document.getElementById("h17").innerHTML="22:00";
+
+	} else if (turnoDeTrabajo=="Noche") {
+		turnoDeTrabajo="Mañana";
+		document.getElementById("nombreTurno").innerHTML="NOCHE";
+		document.getElementById("turno").innerHTML="22:00 a 6:00";
+		document.getElementById("h1").innerHTML="22:00";
+		document.getElementById("h2").innerHTML="22:30";
+		document.getElementById("h3").innerHTML="23:00";
+		document.getElementById("h4").innerHTML="23:30";
+		document.getElementById("h5").innerHTML="0:00";
+		document.getElementById("h6").innerHTML="0:30";
+		document.getElementById("h7").innerHTML="1:00";
+		document.getElementById("h8").innerHTML="1:30";
+		document.getElementById("h9").innerHTML="2:00";
+		document.getElementById("h10").innerHTML="2:30";
+		document.getElementById("h11").innerHTML="3:00";
+		document.getElementById("h12").innerHTML="3:30";
+		document.getElementById("h13").innerHTML="4:00";
+		document.getElementById("h14").innerHTML="4:30";
+		document.getElementById("h15").innerHTML="5:00";
+		document.getElementById("h16").innerHTML="5:30";
+		document.getElementById("h17").innerHTML="6:00";
+
+	} else if (turnoDeTrabajo=="Mañana") {
+		turnoDeTrabajo="Tarde";
+		document.getElementById("nombreTurno").innerHTML="MAÑANA";
+		document.getElementById("turno").innerHTML="6:00 a 14:00";
+		document.getElementById("h1").innerHTML="6:00";
+		document.getElementById("h2").innerHTML="6:30";
+		document.getElementById("h3").innerHTML="7:00";
+		document.getElementById("h4").innerHTML="7:30";
+		document.getElementById("h5").innerHTML="8:00";
+		document.getElementById("h6").innerHTML="8:30";
+		document.getElementById("h7").innerHTML="9:00";
+		document.getElementById("h8").innerHTML="9:30";
+		document.getElementById("h9").innerHTML="10:00";
+		document.getElementById("h10").innerHTML="10:30";
+		document.getElementById("h11").innerHTML="11:00";
+		document.getElementById("h12").innerHTML="11:30";
+		document.getElementById("h13").innerHTML="12:00";
+		document.getElementById("h14").innerHTML="12:30";
+		document.getElementById("h15").innerHTML="13:00";
+		document.getElementById("h16").innerHTML="13:30";
+		document.getElementById("h17").innerHTML="14:00";
+	}
+	
+}
+	</script>
+
+</body>
+</html>
