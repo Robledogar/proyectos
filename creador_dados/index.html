@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Creador de dados</title>
+	<link rel="stylesheet" type="text/css" href="imagen_a_variable.css">
+</head>
+<body>
+	<h1>CONFIGURADOR DE DADOS</h1>
+	<div class="contenedorForms">
+		<form id="myForm1">
+	  		<input type="file" id="myFile1" name="myFile1">
+	  		<br>
+	  		<input type="button" onclick="uploadFile(1)" value="Subir 1º cara del dado">
+		</form> 
+		<br><br><br>
+
+		<form id="myForm2">
+	  		<input type="file" id="myFile2" name="myFile2">
+	  		<br>
+	  		<input type="button" onclick="uploadFile(2)" value="Subir 2ª cara del dado">
+		</form> 
+		<br><br><br>
+
+		<form id="myForm3">
+	  		<input type="file" id="myFile3" name="myFile3">
+	  		<br>
+	  		<input type="button" onclick="uploadFile(3)" value="Subir 3ª cara del dado">
+		</form> 
+		<br><br><br>
+
+		<form id="myForm4">
+	  		<input type="file" id="myFile4" name="myFile4">
+	  		<br>
+	  		<input type="button" onclick="uploadFile(4)" value="Subir 4ª cara del dado">
+		</form> 
+		<br><br><br>
+
+		<form id="myForm5">
+	  		<input type="file" id="myFile5" name="myFile5">
+	  		<br>
+	  		<input type="button" onclick="uploadFile(5)" value="Subir 5ª cara del dado">
+		</form> 
+		<br><br><br>
+
+		<form id="myForm6">
+	  		<input type="file" id="myFile6" name="myFile6">
+	  		<br>
+	  		<input type="button" onclick="uploadFile(6)" value="Subir 6ª cara del dado">
+		</form> 
+	</div>
+	
+<div class="contenedorBotones">
+	
+	<button onclick="showRandomImage(5)">Lanzar dados</button>
+</div>
+
+
+<div id="output" style="display: none;">
+  <img id="myImage1" width="200" height="200">
+  <img id="myImage2" width="200" height="200">
+  <img id="myImage3" width="200" height="200">
+  <img id="myImage4" width="200" height="200">
+  <img id="myImage5" width="200" height="200">
+  <img id="myImage6" width="200" height="200">
+</div>
+
+<div id="randomImage"></div>
+
+
+<script type="text/javascript" src="imagen_a_variable.js"></script>
+	
+</body>
+</html>

@@ -1,0 +1,132 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Trade+Winds&display=swap');
+</style>
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-align: center;
+}
+
+#tablero {
+	width: 180px;
+	border-radius: 10px;
+	transform: rotate(-10deg);
+}
+
+#cursor {
+	width: 50px;
+	position: absolute;
+
+	animation-name: movimientoCursor;
+	animation-duration: 15000ms;
+	animation-iteration-count: infinite;
+	animation-delay: 1000ms;
+	animation-timing-function: ease-in-out;
+	
+}
+
+
+@keyframes movimientoCursor {
+	0% {
+		
+	}
+
+	10% {
+		transform: translate(-140px, 35px);/* "N" */
+	}
+
+	20% {
+		transform: translate(-133px, 28px);/* "O" */
+	}
+
+	40% {
+		transform: translate(-100px, -7px);/* "F" */
+	}
+
+	50% {
+		transform: translate(-145px, 16px);/* "A" */
+	}
+
+	60% {
+		transform: translate(-40px, -7px);/* "L" */
+	}
+
+	70% {
+		transform: translate(-87px, 7px);/* "T" */
+	}
+
+	80% {
+		transform: translate(-109px, -5px);/* "E" */
+	}
+
+	100% {
+		transform: translate(-97px, 8px)/* "S" */
+	}
+}
+
+a {
+	text-decoration: none;
+}
+
+
+
+
+
+
+h1 {
+	color: #F58840;
+	font-size: 20px;
+	margin: 0 0 -2px 0;
+	font-family: 'Trade Winds', cursive;
+
+}
+
+h2 {
+	color: #F58840;
+	font-size: 15px;
+	margin-top: 10px;
+	font-family: 'Trade Winds', cursive;
+}
+
+p {
+	color: #F58840;
+	font-size: 15px;
+	margin-top: 10px;
+	font-family: 'Trade Winds', cursive;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	
+	
+}
+
+.contenedorPrincipal {
+	background: #200122;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to bottom, #6f0000, #200122);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to bottom, #6f0000, #200122); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+	border-radius: 10px;
+	margin: 50px 0;
+	padding: 0 20px;
+	min-width: 350px;
+	width: 350px;
+	height: 200px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+
+	
+}
+
+.texto {
+	align-self: flex-start;
+	margin: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}

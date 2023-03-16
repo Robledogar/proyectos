@@ -1,0 +1,176 @@
+* {
+	text-align: center;
+}
+
+body {
+	background-color: #F0E5CF;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 20px;
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
+#contenedorTitulo {
+	width: 80%;
+
+}
+
+h1{
+	font-size: 35px;
+	margin: 0px 0 -25px 0;
+	border-bottom: 2px solid red;
+	text-align: center;
+	
+}
+
+h2 {
+	font-size: 20px;
+	border-bottom: 2px solid red;
+	padding: 5px;
+	margin-top: 27px;
+}
+
+#contenedorLetras {
+	height: 200px;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	margin: 15px 0 -30px 0;
+}
+
+.letra {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 40px;
+	height: 40px;
+	box-shadow: 0px 0px 15px black;
+	border-radius: 10px;
+	padding: 10px;
+	margin: 10px;
+	background-color: #F1CA89;
+}
+
+h3 {
+	font-size: 35px;
+}
+
+#contenedorCarta {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 200px;
+	width: 200%;
+	margin-top: -20px;
+	margin-bottom: 30px;
+	
+
+	
+
+}
+
+.carta {
+	width: 220px;
+	height: 220px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	background-color: #F1CA89;
+	box-shadow: 0px 0px 15px black;
+	padding: 20px;
+	border-radius: 10px;
+
+}
+
+	.cartaTitulo {
+		height: 15%;
+		width: 80%;	
+		
+	}
+
+		h4 {
+			margin: 10px;
+			font-size: 20px;
+			border-bottom: 2px solid red;
+
+		}
+
+	.cartaTexto {
+		margin-top: 30px;
+		height: 85%;
+		display: flex;
+		flex-direction: row;
+		align-items: flex-start;
+		justify-content: center;	
+	}
+
+		 h5 {
+			font-size: 20px;
+		}
+
+#contenedorTiempo {
+	margin-top: 20px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	margin: -5px;
+	
+}
+
+
+h6 {
+	margin-bottom: -30px;
+	font-size: 10px;
+}
+
+#contenedorBotones {
+	margin: -10px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	gap: 50px;
+
+}
+	button {
+		width: 70px;
+		height: 30px;
+		font-size: 10px;
+		background-color: #E0C097;
+		border: none;
+		border-radius: 10px;
+		box-shadow: 0px 0px 15px black;
+		font-weight: bold;
+	}
+
+	button:hover {
+		background-color: #C8C6C6;
+		cursor: pointer;
+		
+	}
+
+#tiempo {
+	font-size: 20px;
+	color: darkred;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
