@@ -76,7 +76,7 @@ function inicio() {
 
 function iniciarReloj() {
 	if (segundos == 0) {
-		segundos = 90;
+		segundos = 60;
 		setTimeout(cuentaAtras,1000);
 	}	
 }
