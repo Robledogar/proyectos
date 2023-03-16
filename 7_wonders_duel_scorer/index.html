@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="estilos.css">
+	<script type="text/javascript" src="scrips.js"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+
+	
+	<title>7 Wonders Duel</title>
+</head>
+<body>
+	<div id="contenedorPrincipal">
+		<div id="titulo">
+			<h1>7 WONDERS DUEL</h1>
+		</div>
+
+		<div id="tablaPuntuacion">
+			<table>
+				<tr>
+					<td class="imagen"><img src="jugadores.png"></td>
+					<td class="normal"><input type="text" value="J1" class="nombreJugador" id="jugador1" maxlength="8"></td>
+					<td class="normal"><input type="text" value="J2" class="nombreJugador" id="jugador2" maxlength="8"></td>
+				</tr>
+				<tr>
+					<td class="imagen"><img src="cartaAzul.png"></td>
+					<td class="normal"><input type="number" id="puntosAzulesJ1" value=""></td>
+					<td class="normal"><input type="number" id="puntosAzulesJ2" value=""></td>
+				</tr>
+
+				<tr>
+					<td class="imagen"><img src="cartaVerde.png"></td>
+					<td class="normal"><input type="number" id="puntosVerdesJ1" value=""></td>
+					<td class="normal"><input type="number" id="puntosVerdesJ2" value=""></td>
+				</tr>
+
+				<tr>
+					<td class="imagen"><img src="cartaAmarilla.png"></td>
+					<td class="normal"><input type="number" id="puntosAmarillasJ1" value=""></td>
+					<td class="normal"><input type="number" id="puntosAmarillasJ2" value=""></td>
+				</tr>
+
+				<tr>
+					<td class="imagen"><img src="cartaVioleta.png"></td>
+					<td class="normal"><input type="number" id="puntosVioletasJ1" value=""></td>
+					<td class="normal"><input type="number" id="puntosVioletasJ2" value=""></td>
+				</tr>
+
+				<tr>
+					<td class="imagen"><img src="piramide.png"></td>
+					<td class="normal"><input type="number" id="puntosMaravillasJ1" value=""></td>
+					<td class="normal"><input type="number" id="puntosMaravillasJ2" value=""></td>
+				</tr>
+
+				<tr>
+					<td class="imagen"><img src="fichaProgreso.png"></td>
+					<td class="normal"><input type="number" id="puntosProgresoJ1" value=""></td>
+					<td class="normal"><input type="number" id="puntosProgresoJ2" value=""></td>
+				</tr>
+
+				<tr>
+					<td class="imagen"><img src="monedas.png"></td>
+					<td class="normal"><input type="number" id="puntosMonedasJ1" value=""></td>
+					<td class="normal"><input type="number" id="puntosMonedasJ2" value=""></td>
+				</tr>
+
+				<tr>
+					<td class="imagen"><img src="escudo.png"></td>
+					<td class="normal"><input type="number" id="puntosMilitaresJ1" value=""></td>
+					<td class="normal"><input type="number" id="puntosMilitaresJ2" value=""></td>
+				</tr>
+
+				<tr>
+					<td class="imagen"><img src="suma.png" id="imagenSuma"></td>
+					<td class="suma" id="sumaJ1"></td>
+					<td class="suma" id="sumaJ2"></td>
+				</tr>
+			</table>
+		</div>
+
+		<div id="boton">
+			<button id="botonResultado" onclick="verResultado()">VER RESULTADO</button>
+			<a href="index.html"><button id="botonNuevaPartida">NUEVA PARTIDA</button></a>
+		</div>
+	</div>
+
+</body>
+</html>
