@@ -1,0 +1,212 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    color: #F2F2F2;
+}
+
+h2 {
+    font-size: 15px;
+    color: #F2F2F2;
+    margin: 0;
+}
+
+h3 {
+    font-size: 30px;
+    color: #F2F2F2;
+    margin: 0;
+}
+
+h4 {
+    font-size: 9px;
+    margin: 0;
+}
+
+h5 {
+    font-size: 20px;
+    margin: 0;
+}
+
+img {
+    width: 80%;
+    
+}
+
+
+
+#contenedorPrincipal {
+    background-color: #404040;
+    border-radius: 10px;
+    width: 700px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+       
+    #contenedorInfo {
+        width: 100%;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+        #contenedorProduccion {
+            background-color: #9FA2A6;
+            border-radius: 5px;
+            padding: 5px;
+            width: 200px;
+            height: 70px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+
+        }
+        
+        #cantidadPiezas {
+            
+        }
+            
+
+        #contenedorConsumo {
+            background-color: #9FA2A6;
+            border-radius: 5px;
+            padding: 5px;
+            width: 200px;
+            height: 70px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+                
+        #cantidadConsumo {
+
+        }
+           
+
+    #contenedorMaquinas {
+        width: 100%;
+        height: 200px;
+        margin-top: 10px;
+        
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+        .maquina {
+            width: 150px;
+            height: 150px;
+            background-color: #F2F2F2;
+            border-radius: 5px;
+
+            display: flex;
+            flex-direction: row;
+
+
+
+            
+              
+        }
+            .controlMaquina {
+                width: 75%;
+                
+
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-around;
+                    
+            }
+
+                .btnsMaquina {
+                    display: flex;
+                    flex-direction: row;
+                    gap: 20px;
+                }
+
+                    .btnMarcha {
+                        background-color: green;
+                        color: #F2F2F2;
+                        cursor: pointer;
+                        border: none;
+                        border-radius: 3px;
+                    }
+
+                    .btnMarcha:hover {
+                        background-color: lightgreen;
+                    }
+
+                    .btnParo {
+                        background-color: red;
+                        color: #F2F2F2;
+                        cursor: pointer;
+                        border: none;
+                        border-radius: 3px;
+                    }
+
+                    .btnParo:hover {
+                        background-color: lightcoral;
+                    }
+
+            .infoMaquina {
+                
+                width: 25%;
+
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                align-items: center;
+
+
+            }
+
+                .infoProduccion {
+                    
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                    .valorProduccion {
+
+                    }
+
+                .infoConsumo {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                    .valorConsumo {
+
+                    }
+
+      
+
+    #contenedorControl {
+        
+        width: 100%;
+        height: 50px;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        
+    }
+
+        
