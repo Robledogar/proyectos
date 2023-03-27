@@ -7,17 +7,11 @@ let consumoTotal = 0;
 
 
 
-let intervalo;
 
-const valorProduccion = document.querySelector('.valorProduccion');
-const valorConsumo = document.querySelector('.valorConsumo')
 
-const btnMarcha = document.querySelector('.btnMarcha');
-const btnParo = document.querySelector('.btnParo');
 
-//EVENTOS
-btnMarcha.addEventListener('click', marcha);
-btnParo.addEventListener('click', paro);
+
+
 
 
 
@@ -26,6 +20,28 @@ class Maquina {
     constructor(produccion, consumo) {
         this.produccion = produccion;
         this.consumo = consumo;
+        this.btnMarcha = document.querySelector('.btnMarcha');
+        this.btnParo = document.querySelector('.btnParo');
+        this.intervalo = null;
+
+        //EVENTOS
+        this.btnMarcha.addEventListener('click', this.marcha.bind(this));
+        this.btnParo.addEventListener('click', this.paro.bind(this));
+    }
+
+    // METODOS
+    marcha() {
+            this.intervalo = setInterval(() => {
+            produccionTotal = produccionTotal + this.produccion;
+            consumoTotal = consumoTotal + this.consumo;
+            cantidadPiezas.innerHTML = produccionTotal;
+            cantidadConsumo.innerHTML = consumoTotal;
+        }, 3000);
+    }
+ 
+ 
+    paro() {
+        clearInterval(this.intervalo);
     }
 }
 
@@ -36,17 +52,13 @@ const maquina1 = new Maquina(2,5);
 
 
 
-// FUNCIONES
-function marcha() {
-   intervalo = setInterval(function() {
-        produccionTotal = produccionTotal + Number(valorProduccion.innerHTML);
-        consumoTotal = consumoTotal + Number(valorConsumo.innerHTML);
-        cantidadPiezas.innerHTML = produccionTotal;
-        cantidadConsumo.innerHTML = consumoTotal;
-    }, 3000);
-}
 
 
-function paro() {
-    clearInterval(intervalo);
-}
+
+
+
+
+
+
+
+
