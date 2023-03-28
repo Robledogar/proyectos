@@ -5,6 +5,8 @@ const btnArranque = document.querySelector('#arrancarMaquinas');
 const btnParo = document.querySelector('#pararMaquinas');
 const contenedorMaquinas = document.querySelector('#contenedorMaquinas');
 
+const spinner = document.querySelector('.spinner');
+
 btnPreparar.addEventListener('click', prepararMaquinas);
 btnArranque.addEventListener('click', arrancarMaquinas);
 btnParo.addEventListener('click', pararMaquinas);
@@ -21,13 +23,14 @@ class Maquina {
         this.btnMarcha = document.querySelector('.btnMarcha');
         this.btnParo = document.querySelector('.btnParo');
         this.intervalo = null;
+        this.spinner = document.querySelector('.spinner');
         this.maquinaHTML = `
         <div class="maquina">
           <div class="controlMaquina">
             <img src="maquina.png" alt="maquina">
-            
           </div>
           <div class="infoMaquina">
+          
             <div class="infoProduccion">
               <h4>Pro</h4>
               <h5 class="valorProduccion">${produccion}</h5>
@@ -83,7 +86,9 @@ function prepararMaquinas() {
 
 
 function arrancarMaquinas() {
+
     if(maquinasPreparadas) {
+      spinner.style.opacity = 1;
       for(let i = 0; i < grupoMaquinas.length; i++) {
         grupoMaquinas[i].marcha();
       }
@@ -94,6 +99,7 @@ function arrancarMaquinas() {
 
 function pararMaquinas() {
     if(maquinasPreparadas) {
+      spinner.style.opacity = 0;
       for(let i = 0; i < grupoMaquinas.length; i++) {
         grupoMaquinas[i].paro();
       }
