@@ -24,10 +24,17 @@ class Maquina {
         this.btnParo = document.querySelector('.btnParo');
         this.intervalo = null;
         this.spinner = document.querySelector('.spinner');
+        this.btnMarcha = document.querySelector('.btnMarcha');
+        this.btnParo = document.querySelector('.btnParo');
+
         this.maquinaHTML = `
         <div class="maquina">
           <div class="controlMaquina">
             <img src="maquina.png" alt="maquina">
+            <div class="btnsMaquina">
+              <button class="btnMarcha">M</button>
+              <button class="btnParo">P</button>
+            </div>
           </div>
           <div class="infoMaquina">
           
@@ -43,6 +50,10 @@ class Maquina {
         </div>
         
         `;
+
+        
+      
+      
           
     }
 
@@ -59,6 +70,10 @@ class Maquina {
  
     paro() {
         clearInterval(this.intervalo);
+    }
+
+    funcionBotonMarcha() {
+      console.log('Botón marcha activado');
     }
 }
 

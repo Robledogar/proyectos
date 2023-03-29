@@ -143,6 +143,9 @@ img {
 
                     .btnMarcha {
                         background-color: green;
+                        padding: 5px;
+                        width: 25px;
+                        height: 25px;
                         color: #F2F2F2;
                         cursor: pointer;
                         border: none;
@@ -151,10 +154,14 @@ img {
 
                     .btnMarcha:hover {
                         background-color: lightgreen;
+                        
                     }
 
                     .btnParo {
                         background-color: red;
+                        padding: 5px;
+                        width: 25px;
+                        height: 25px;
                         color: #F2F2F2;
                         cursor: pointer;
                         border: none;
