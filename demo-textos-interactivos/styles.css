@@ -1,0 +1,135 @@
+* {
+    box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+    background-color: #C5D3D9;
+   
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+    h1 {
+        margin: 10px;
+        text-align: center;
+        font-size: 45px;
+    }
+
+    h2 {
+        margin: 30px;
+        font-size: 20px;
+
+    }
+
+    h3 {
+        margin: 10px;
+        font-size: 15px;
+    }
+
+    h4 {
+        margin: 10px;
+        font-size: 20px;
+    }
+
+    span {
+        cursor: pointer;
+        padding: 1px;
+    }
+
+    #datosGenerales {
+        max-width: 1000px;
+
+    }
+
+
+
+    #componentes {
+        max-width: 1000px;
+
+    }
+
+
+        #componentes ul {
+
+        }
+
+        #componentes ul li {
+
+        }
+
+        #componentes ul li::marker {
+            color: #141E26;
+            
+        }
+            /* SPAN DE LOS COMPONENTES */
+            #piezasTerritorio {
+                
+
+            }
+
+            #piezasTerritorio:hover {
+                background-color: #278C70;
+                color: white;
+                border-radius: 2px;
+                transition: 500ms;
+            }
+
+            #fichasSeguidores {   
+
+            }
+
+            #fichasSeguidores:hover {   
+                background-color: #278C70;
+                color: white;
+                border-radius: 2px;
+                transition: 500ms;
+            }
+
+            #marcador {
+
+            }
+
+            #marcador:hover {
+                background-color: #278C70;
+                color: white;
+                border-radius: 2px;
+                transition: 500ms;
+            }
+
+            #reglamento {
+
+            }
+
+            #reglamento:hover {
+                background-color: #278C70;
+                color: white;
+                border-radius: 2px;
+                transition: 500ms;
+            }
+
+    #contenedorInteractivo {
+        margin: 30px 10px;
+        width: 90%;
+        height: 300px;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+
+    }     
+    
+    #contenedorInteractivo img {
+        height: 50%;
+        
+        border-radius: 10px;
+    }
+
+
