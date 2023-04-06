@@ -158,7 +158,8 @@ h2 {
   /* REGLAMENTO */
   #textoReglamento {
     padding: 10px;
-    max-width: 500px;
+    max-width: 350px;
+    
   }
 
   h3 {
@@ -177,6 +178,7 @@ h2 {
 
   p {
     color: #400A05;
+    
   }
 
   li {

@@ -100,46 +100,42 @@ function barajarMazo() {
 // Muestra el reglamento del juego
 function mostrarReglamento() {
     contenedor.innerHTML = `<div id="textoReglamento"> 
-                            <h3> REGLAMENTO</H3>
-                            <h4>Acciones de Mani:</h4>
-                            <ul>
-                            <li>Mani lleva a cabo una acción por turno.</li>
-                            <li>-Si no tiene fichas de ayudante debajo:</li>
-                            <ul>
-                                <li>Envíale a la Loseta 7. La Fuente, reúne sus fichas de ayudante y toma una Gema de la Loseta 13. PALACIO DEL SULTAN o de la loseta 16. TRATANTE DE GEMAS (de la que menos gemas tenga, en caso de igualdad, tu eliges la que toma).</li>
-                            </ul>
-                            <li>-Si tiene alguna ficha debajo:</li>
-                            <ul>
-                                <li>Voltea la carta superior del mazo de Mani y envíale a la loseta que indica la carta, dejando en ella una de sus fichas o recogiendo otra suya que allí estuviera y resuelve según cada loseta:</li>
-                                
-                                <li>1 CARRETERO: Si aun no tiene el carro lleno, Mani toma una ficha del carro y la coloca en él, si es su última ficha de carro se lleva una Gema.</li>
-                                <li>2 ALMACEN DE TELAS: No realiza acciones.</li>
-                                <li>3 ALMACEN DE ESPECIAS: No realiza acciones.</li>
-                                <li>4 ALMACEN DE FRUTAS: No realiza acciones.</li>
-                                <li>5 ESTAFETA: Mueve el marcador correspondiente.</li>
-                                <li>6 CARAVASAR: Elimina del juego la carta superior.</li>
-                                <li>8 MERCADO NEGRO: No realiza acciones.</li>
-                                <li>9 CASA DE TÉ: No realiza acciones.</li>
-                                <li>10 GRAN MERCADO: Elimina del juego la ficha superior.</li>
-                                <li>11 MERCADILLO: Elimina del juego la ficha superior.</li>
-                                <li>12 CUARTELILLO: Si el sobrino de Mani esta en esta aquí, Roba una nueva carta del mazo de Mani y envía a la localización de la carta al sobrino, llevando a cabo la acción de esa loseta.</li>
-                                <li>13 PALACIO DEL SULTAN: No realiza acciones.</li>
-                                <li>14 MEZQUITA PEQUEÑA: Si no tiene en su poder alguna loseta roja o verde, toma la loseta que menos coste tenga, si ambas cuestan lo mismo, toma la que te falte a ti, si persiste la igualdad, eliges tu la que toma. Si tiene una de las dos en su poder, toma la otra y coge una Gema. Si tiene ambas, toma la que te falte a ti.</li>
-                                <li>15 GRAN MEZQUITA: Si no tiene en su poder alguna loseta amarilla o azul, toma la loseta amarilla. Si tiene la amarilla en su poder, toma la azul y coge una nueva ficha bajo su control y una Gema. Si tiene ambas, toma la que te falte a ti.</li>
-                                <li>16 TRATANTE DE GEMAS: No realiza acciones.</li>
-                               
-                            </ul>
+                                <h3>REGLAMENTO</h3>
+                                <h4>Acciones de Mani:</h4>
+                                <p>Mani lleva a cabo una acción por turno.</p>
+                                <br>
+                                <p>Si no tiene fichas de ayudante debajo:</p>
+                                <p>Envíale a la Loseta 7. La Fuente, reúne sus fichas de ayudante y toma una Gema de la Loseta 13. PALACIO DEL SULTAN o de la loseta 16. TRATANTE DE GEMAS (de la que menos gemas tenga, en caso de igualdad, tú eliges la que toma).</p>
+                                <br>
+                                <p>Si tiene alguna ficha debajo:</p>
+                                <p>Voltea la carta superior del mazo de Mani y envíale a la loseta que indica la carta, dejando en ella una de sus fichas o recogiendo otra suya que allí estuviera y resuelve según cada loseta:</p>
+                                <br>
+                                <p>1 CARRETERO: Si aún no tiene el carro lleno, Mani toma una ficha del carro y la coloca en él, si es su última ficha de carro se lleva una Gema.</p>
+                                <p>2 ALMACEN DE TELAS: No realiza acciones.</p>
+                                <p>3 ALMACEN DE ESPECIAS: No realiza acciones.</p>
+                                <p>4 ALMACEN DE FRUTAS: No realiza acciones.</p>
+                                <p>5 ESTAFETA: Mueve el marcador correspondiente.</p>
+                                <p>6 CARAVASAR: Elimina del juego la carta superior.</p>
+                                <p>8 MERCADO NEGRO: No realiza acciones.</p>
+                                <p>9 CASA DE TÉ: No realiza acciones.</p>
+                                <p>10 GRAN MERCADO: Elimina del juego la ficha superior.</p>
+                                <p>11 MERCADILLO: Elimina del juego la ficha superior.</p>
+                                <p>12 CUARTELILLO: Si el sobrino de Mani está aquí, Roba una nueva carta del mazo de Mani y envía a la localización de la carta al sobrino, llevando a cabo la acción de esa loseta.</p>
+                                <p>13 PALACIO DEL SULTAN: No realiza acciones.</p>
+                                <p>14 MEZQUITA PEQUEÑA: Si no tiene en su poder alguna loseta roja o verde, toma la loseta que menos coste tenga, si ambas cuestan lo mismo, toma la que te falte a ti, si persiste la igualdad, eliges tu la que toma. Si tiene una de las dos en su poder, toma la otra y coge una Gema. Si tiene ambas, toma la que te falte a ti.</p>
+                                <p>15 GRAN MEZQUITA: Si no tiene en su poder alguna loseta amarilla o azul, toma la loseta amarilla. Si tiene la amarilla en su poder, toma la azul y coge una nueva ficha bajo su control y una Gema. Si tiene ambas, toma la que te falte a ti.</p>
+                                <p>16 TRATANTE DE GEMAS: No realiza acciones</p>
                             
                                 <h4>Nuestras acciones</h4>
                                 <p>Moveremos y llevaremos a cabo las acciones tal y como indican las reglas del juego con la salvedad de que no podemos llevar a nuestro personaje a una loseta donde haya una ficha de ayudante de Mani o el mismo.</p>
                                 <h4>Nuestros Encuentros</h4>
                                 <p>Se llevan a cabo como dicen las reglas, exceptuando el encuentro con el propio Mani que no tendrá efecto y solo se producirá si Mani se mueve a nuestra loseta, en tal caso nos cobraremos de la banca 2 monedas (emulando el pago de Mani a nosotros por tratar de hacer una acción donde esta nuestro personaje).</p>
                                 <h4>Encuentros de Mani</h4>
-                                <ul>
-                                <li>Si se encuentra con el alguna de las 2 fichas de Gobernador o Contrabandista, Mani tomará un turno extra y luego lanzaremos los 2 dados de 6 para reubicar al Gobernador o Contabandista. Esto solo lo llevara a cabo una vez por turno, si se volviese a encontrar con otra ficha de Gobernador o Contrabandista en el turno extra, no tomará un segundo turno extra.</li>
-                                <li>Si se encuentra con nuestro sobrino, mandará a este al cuartelillo y tomará un turno extra, pero como antes, un solo turno extra.</li>
-                                <li>Si se encuentra con nuestro personaje, cobraremos de la banca 2 monedas y  Mani lleva a cabo la acción correspondiente a la loseta.</li>
-                                </ul>
+                                <p>Si se encuentra con el alguna de las 2 fichas de Gobernador o Contrabandista, Mani tomará un turno extra y luego lanzaremos los 2 dados de 6 para reubicar al Gobernador o Contabandista. Esto solo lo llevara a cabo una vez por turno, si se volviese a encontrar con otra ficha de Gobernador o Contrabandista en el turno extra, no tomará un segundo turno extra.</p>
+                                <br>
+                                <p>Si se encuentra con nuestro sobrino, mandará a este al cuartelillo y tomará un turno extra, pero como antes, un solo turno extra.</p>
+                                <br>
+                                <p>Si se encuentra con nuestro personaje, cobraremos de la banca 2 monedas y  Mani lleva a cabo la acción correspondiente a la loseta.</p>
                                 <h4>El objetivo del juego es lograr todas las gemas de nuestro carro antes que lo haga Mani.</h4>
                                 <p>Probar a ganar ubicando las losetas con los números de caminos cortos y una vez superado, el de los caminos largos o de forma aleatoria.</p>
                                 </div>
