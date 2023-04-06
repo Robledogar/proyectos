@@ -74,7 +74,7 @@ function nuevaCarta() {
     contenedor.innerHTML = '<div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>';
 
     setTimeout(function() {
-        let random = Math.floor(Math.random() * (copiaArrayCartas.length- 1));
+        let random = Math.floor(Math.random() * copiaArrayCartas.length);
         contenedor.innerHTML = `${copiaArrayCartas[random]}
                             <br>
                             <button class="boton" id="botonNuevaCarta">SACAR CARTA</button>
