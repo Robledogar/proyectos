@@ -67,7 +67,7 @@ h2 {
     box-shadow: 5px 5px 20px black;
 }
 
-/* Spinner */
+/* SPINNER */
 .lds-roller {
     margin-top: 200px;
     display: inline-block;
@@ -152,5 +152,38 @@ h2 {
     100% {
       transform: rotate(360deg);
     }
+  }
+
+
+  /* REGLAMENTO */
+  #textoReglamento {
+    padding: 10px;
+    max-width: 500px;
+  }
+
+  h3 {
+    text-align: center;
+    color: #400A05;
+    font-size: 30px;
+    margin: 20px 0;
+
+  }
+
+  h4 {
+    color: #400A05;
+    margin: 15px 0 5px 0;
+    font-size: 20px;
+  }
+
+  p {
+    color: #400A05;
+  }
+
+  li {
+    color: #400A05;
+  }
+
+  #btnVolverInicio {
+    margin: 20px;
   }
   

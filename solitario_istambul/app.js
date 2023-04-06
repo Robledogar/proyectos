@@ -88,7 +88,7 @@ function nuevaCarta() {
             barajarMazo();
           }
         
-      }, 2000);
+      }, 1500);
   
 }
 
@@ -100,7 +100,7 @@ function barajarMazo() {
 // Muestra el reglamento del juego
 function mostrarReglamento() {
     contenedor.innerHTML = `<div id="textoReglamento"> 
-                            <h3> REGLAMENTO DEL JUEGO</H3>
+                            <h3> REGLAMENTO</H3>
                             <h4>Acciones de Mani:</h4>
                             <ul>
                             <li>Mani lleva a cabo una acción por turno.</li>
@@ -111,7 +111,7 @@ function mostrarReglamento() {
                             <li>-Si tiene alguna ficha debajo:</li>
                             <ul>
                                 <li>Voltea la carta superior del mazo de Mani y envíale a la loseta que indica la carta, dejando en ella una de sus fichas o recogiendo otra suya que allí estuviera y resuelve según cada loseta:</li>
-                                <ol>
+                                
                                 <li>1 CARRETERO: Si aun no tiene el carro lleno, Mani toma una ficha del carro y la coloca en él, si es su última ficha de carro se lleva una Gema.</li>
                                 <li>2 ALMACEN DE TELAS: No realiza acciones.</li>
                                 <li>3 ALMACEN DE ESPECIAS: No realiza acciones.</li>
@@ -127,7 +127,7 @@ function mostrarReglamento() {
                                 <li>14 MEZQUITA PEQUEÑA: Si no tiene en su poder alguna loseta roja o verde, toma la loseta que menos coste tenga, si ambas cuestan lo mismo, toma la que te falte a ti, si persiste la igualdad, eliges tu la que toma. Si tiene una de las dos en su poder, toma la otra y coge una Gema. Si tiene ambas, toma la que te falte a ti.</li>
                                 <li>15 GRAN MEZQUITA: Si no tiene en su poder alguna loseta amarilla o azul, toma la loseta amarilla. Si tiene la amarilla en su poder, toma la azul y coge una nueva ficha bajo su control y una Gema. Si tiene ambas, toma la que te falte a ti.</li>
                                 <li>16 TRATANTE DE GEMAS: No realiza acciones.</li>
-                                </ol>
+                               
                             </ul>
                             
                                 <h4>Nuestras acciones</h4>
@@ -142,5 +142,10 @@ function mostrarReglamento() {
                                 </ul>
                                 <h4>El objetivo del juego es lograr todas las gemas de nuestro carro antes que lo haga Mani.</h4>
                                 <p>Probar a ganar ubicando las losetas con los números de caminos cortos y una vez superado, el de los caminos largos o de forma aleatoria.</p>
-                                </div>`;
+                                </div>
+                                <br>
+                                <button class="boton" id="btnVolverInicio">VOLVER</button>
+                                `;
+    const btnVolverInicio = document.querySelector('#btnVolverInicio');
+    btnVolverInicio.addEventListener('click', inicio);
 }
