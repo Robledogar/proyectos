@@ -138,19 +138,33 @@ function mostrarReglamento() {
                                 <p>Voltea la carta superior del mazo de Mani y envíale a la loseta que indica la carta, dejando en ella una de sus fichas o recogiendo otra suya que allí estuviera y resuelve según cada loseta:</p>
                                 <br>
                                 <p>1 CARRETERO: Si aún no tiene el carro lleno, Mani toma una ficha del carro y la coloca en él, si es su última ficha de carro se lleva una Gema.</p>
+                                <br>
                                 <p>2 ALMACEN DE TELAS: No realiza acciones.</p>
+                                <br>
                                 <p>3 ALMACEN DE ESPECIAS: No realiza acciones.</p>
+                                <br>
                                 <p>4 ALMACEN DE FRUTAS: No realiza acciones.</p>
+                                <br>
                                 <p>5 ESTAFETA: Mueve el marcador correspondiente.</p>
+                                <br>
                                 <p>6 CARAVASAR: Elimina del juego la carta superior.</p>
+                                <br>
                                 <p>8 MERCADO NEGRO: No realiza acciones.</p>
+                                <br>
                                 <p>9 CASA DE TÉ: No realiza acciones.</p>
+                                <br>
                                 <p>10 GRAN MERCADO: Elimina del juego la ficha superior.</p>
+                                <br>
                                 <p>11 MERCADILLO: Elimina del juego la ficha superior.</p>
+                                <br>
                                 <p>12 CUARTELILLO: Si el sobrino de Mani está aquí, Roba una nueva carta del mazo de Mani y envía a la localización de la carta al sobrino, llevando a cabo la acción de esa loseta.</p>
+                                <br>
                                 <p>13 PALACIO DEL SULTAN: No realiza acciones.</p>
+                                <br>
                                 <p>14 MEZQUITA PEQUEÑA: Si no tiene en su poder alguna loseta roja o verde, toma la loseta que menos coste tenga, si ambas cuestan lo mismo, toma la que te falte a ti, si persiste la igualdad, eliges tu la que toma. Si tiene una de las dos en su poder, toma la otra y coge una Gema. Si tiene ambas, toma la que te falte a ti.</p>
+                                <br>
                                 <p>15 GRAN MEZQUITA: Si no tiene en su poder alguna loseta amarilla o azul, toma la loseta amarilla. Si tiene la amarilla en su poder, toma la azul y coge una nueva ficha bajo su control y una Gema. Si tiene ambas, toma la que te falte a ti.</p>
+                                <br>
                                 <p>16 TRATANTE DE GEMAS: No realiza acciones</p>
                             
                                 <h4>Nuestras acciones</h4>
