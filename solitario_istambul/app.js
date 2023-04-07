@@ -1,6 +1,11 @@
 // VARIABLES
-
+const botonera = document.querySelector('#botonera');
 const contenedor = document.querySelector('#contenedor');
+
+let juegoEmpezado;
+let random;
+let cartaBarajar;
+
 
 
 // EVENTOS
@@ -46,6 +51,8 @@ let copiaArrayCartas = [];
 
 //Carga la pantalla de inicio
 function inicio() {
+    juegoEmpezado = false;
+    botonera.innerHTML = '';
     contenedor.innerHTML = `<h1>ISTAMBUL</h1>
                            <h2>MODO SOLITARIO</h2>
                            <button class="boton" id="botonComenzar">COMENZAR JUEGO</button>
@@ -60,21 +67,38 @@ function inicio() {
 
 // Carga la imagen del juego, prepara el mazo de cartas y carga el botón de sacar 1ª carta
 function comenzar() {
+    
     contenedor.innerHTML = `<img class="carta" src="images/17.jpg">
                             <button class="boton" id="botonPrimeraCarta">SACAR 1ª CARTA</button>`;
+
     const btnPrimeraCarta = document.querySelector('#botonPrimeraCarta');
-    btnPrimeraCarta.addEventListener('click', nuevaCarta);
+    btnPrimeraCarta.addEventListener('click', sacarPrimeraCarta); 
+}
+
+function sacarPrimeraCarta() {
     barajarMazo();
-    
+
+    botonera.innerHTML = `  <button class="botonBotonera" id="botonConsultaReglamento" title="Consultar reglamento">?</button>
+                            <button class="botonBotonera" id="botonVolverInicio" title="Finalizar juego">X</button>
+                            `;
+    const btnConsultarReglamento = document.querySelector('#botonConsultaReglamento');
+    const btnVolverInicio = document.querySelector('#botonVolverInicio');
+
+    btnConsultarReglamento.addEventListener('click', mostrarReglamento);
+    btnVolverInicio.addEventListener('click', asegurarFinJuego);
+
+    nuevaCarta();
 }
 
 // Genera una carta aleatoria, la elimina del array y carga el botón Nueva carta
 function nuevaCarta() {
+    juegoEmpezado = true;
+    cartaBarajar = false;
     
     contenedor.innerHTML = '<div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>';
 
     setTimeout(function() {
-        let random = Math.floor(Math.random() * copiaArrayCartas.length);
+        random = Math.floor(Math.random() * copiaArrayCartas.length);
         contenedor.innerHTML = `${copiaArrayCartas[random]}
                             <br>
                             <button class="boton" id="botonNuevaCarta">SACAR CARTA</button>
@@ -86,10 +110,12 @@ function nuevaCarta() {
         if (contenedor.querySelector('.carta').getAttribute('src') === 'images/18.jpg') {
             btnNuevaCarta.textContent = 'BARAJAR MAZO';
             barajarMazo();
+            cartaBarajar = true;
           }
         
       }, 1500);
-  
+      
+  console.log(copiaArrayCartas);
 }
 
 // Copia el arrayCartas original
@@ -99,6 +125,7 @@ function barajarMazo() {
 
 // Muestra el reglamento del juego
 function mostrarReglamento() {
+    console.log(random);
     contenedor.innerHTML = `<div id="textoReglamento"> 
                                 <h3>REGLAMENTO</h3>
                                 <h4>Acciones de Mani:</h4>
@@ -140,8 +167,43 @@ function mostrarReglamento() {
                                 <p>Probar a ganar ubicando las losetas con los números de caminos cortos y una vez superado, el de los caminos largos o de forma aleatoria.</p>
                                 </div>
                                 <br>
-                                <button class="boton" id="btnVolverInicio">VOLVER</button>
+                                <button class="boton" id="btnVolverAlJuego">VOLVER</button>
                                 `;
-    const btnVolverInicio = document.querySelector('#btnVolverInicio');
-    btnVolverInicio.addEventListener('click', inicio);
+    const btnVolverInicio = document.querySelector('#btnVolverAlJuego');
+
+    btnVolverInicio.addEventListener('click', volverAlJuego);
+     
+}
+
+function volverAlJuego() {
+
+    if(juegoEmpezado) { 
+
+        if (cartaBarajar) {
+            nuevaCarta()
+          } else {
+            contenedor.innerHTML = `${copiaArrayCartas[random]}
+                            <br>
+                            <button class="boton" id="botonNuevaCarta">SACAR CARTA</button>
+                            `;
+            const btnNuevaCarta = document.querySelector('#botonNuevaCarta');
+            btnNuevaCarta.addEventListener('click', nuevaCarta);
+          }
+       
+    } else {
+        inicio();
+    }    
+}
+
+function asegurarFinJuego() {
+    
+    contenedor.innerHTML = ` <h3>¿Quieres salir del juego?</h3>
+                                <button class="boton" id="botonSalir">SALIR</button>
+                                <button class="boton" id="botonContinuar">CONTINUAR</button>  
+                            `;
+    const btnSalir = document.querySelector('#botonSalir');
+    const btnContinuar = document.querySelector('#botonContinuar');
+
+    btnSalir.addEventListener('click', inicio);
+    btnContinuar.addEventListener('click', volverAlJuego);
 }

@@ -9,11 +9,36 @@
 
 body {
     background-color: #BFBFBF;
-
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+
+
+#botonera {
+  width: 340px;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.botonBotonera {
+  box-shadow: 5px 5px 20px black;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  background-color: #164003;
+  color: #BFBFBF;
+  transition: 500ms;
+  
+}
+
+.botonBotonera:hover {
+  box-shadow: 2px 2px 10px black;
 }
 
 #contenedor {
@@ -21,7 +46,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 15px;
+    
 }
 
 h1 {
@@ -185,7 +210,8 @@ h2 {
     color: #400A05;
   }
 
-  #btnVolverInicio {
-    margin: 20px;
+  #btnVolverAlJuego {
+    margin: 20px 0 50px 0;
+    
   }
   
