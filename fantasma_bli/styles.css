@@ -17,7 +17,7 @@
     
 }
 
-    #contenedorCartas {
+    #contenedorIzquierda {
         border: 1px solid red;
         width: 70%;
         height: 500px;
@@ -45,7 +45,7 @@
             transform: scale(1.2);
         }
         
-        #imagenCarta {
+        .imagenCarta {
             width: 230px;
             margin: 10px;
 
